@@ -1,0 +1,65 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" underline="true"/>
+                            <#input id="cardId" name="私教卡ID" underline="true"/>
+                            <#input id="vipId" name="用户id" underline="true"/>
+                            <#input id="realname" name="姓名" underline="true"/>
+                            <#input id="title" name="卡名" underline="true"/>
+                            <#input id="cardTypeId" name="卡种类型ID" underline="true"/>
+                            <#input id="cardTypeName" name="卡种类型名" underline="true"/>
+                            <#input id="counts" name="总次数" underline="true"/>
+                            <#input id="leftCounts" name="剩余次数" underline="true"/>
+                            <#input id="actualInsertTime" name="实际添加时间" underline="true"/>
+                            <#input id="openCardTime" name="开卡时间" underline="true"/>
+                            <#input id="startUseTime" name="开始使用时间" underline="true"/>
+                            <#input id="expireTime" name="到期时间" underline="true"/>
+                            <#input id="insertTime" name="录入时间" underline="true"/>
+                            <#input id="unitPrice" name="单价" underline="true"/>
+                            <#input id="actualMoney" name="实收金额" underline="true"/>
+                            <#input id="retainage" name="尾款金额" underline="true"/>
+                            <#input id="autoOpenCardStatus" name="是否自动开卡"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="balance" name="余额" underline="true"/>
+                            <#input id="banksure" name="财务是否确认" underline="true"/>
+                            <#input id="contractNumber" name="合同编号" underline="true"/>
+                            <#input id="frontMoneyStatus" name="是否定金方式" underline="true"/>
+                            <#input id="isRenewCard" name="是否续卡" underline="true"/>
+                            <#input id="isUnitedCard" name="是否通店卡" underline="true"/>
+                            <#input id="coachId" name="所属教练ID" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" underline="true"/>
+                            <#input id="membershipId" name="会籍ID" underline="true"/>
+                            <#input id="membershipName" name="会籍名称" underline="true"/>
+                            <#input id="opeUserId" name="经办人用户ID" underline="true"/>
+                            <#input id="opeUsername" name="经办人用户名" underline="true"/>
+                            <#input id="payMethod" name="支付方式" underline="true"/>
+                            <#input id="phone" name="手机号" underline="true"/>
+                            <#input id="sourceId" name="客户来源id" underline="true"/>
+                            <#input id="sourceName" name="客户来源名" underline="true"/>
+                            <#input id="remark" name="备注" underline="true"/>
+                            <#input id="isAutoPrint" name="是否自动打印" underline="true"/>
+                            <#input id="port" name="端口 1 充值新卡 2 续费" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CardPtraincardRechargeInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CardPtraincardRechargeInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/card/cardPtraincardRecharge/cardPtraincardRecharge_info.js"></script>
+@}

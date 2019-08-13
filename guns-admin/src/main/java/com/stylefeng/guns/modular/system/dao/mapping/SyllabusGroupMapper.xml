@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SyllabusGroupMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SyllabusGroup">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="course_type" property="courseType" />
+        <result column="type" property="type" />
+        <result column="title" property="title" />
+        <result column="place" property="place" />
+        <result column="classroom_id" property="classroomId" />
+        <result column="people_count" property="peopleCount" />
+        <result column="lower_limit" property="lowerLimit" />
+        <result column="is_select_num" property="isSelectNum" />
+        <result column="is_sub_deduct_num" property="isSubDeductNum" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="temporary_coach" property="temporaryCoach" />
+        <result column="tags" property="tags" />
+        <result column="description" property="description" />
+        <result column="content" property="content" />
+        <result column="is_vip_user_sub" property="isVipUserSub" />
+        <result column="image" property="image" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="open_group_desc" property="openGroupDesc" />
+        <result column="insert_time" property="insertTime" />
+        <result column="self_cancel" property="selfCancel" />
+        <result column="hidden" property="hidden" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, course_type AS courseType, type, title, place, classroom_id AS classroomId, people_count AS peopleCount, lower_limit AS lowerLimit, is_select_num AS isSelectNum, is_sub_deduct_num AS isSubDeductNum, coach_id AS coachId, coach_name AS coachName, temporary_coach AS temporaryCoach, tags, description, content, is_vip_user_sub AS isVipUserSub, image, start_time AS startTime, end_time AS endTime, open_group_desc AS openGroupDesc, insert_time AS insertTime, self_cancel AS selfCancel, hidden
+    </sql>
+
+</mapper>

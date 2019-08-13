@@ -1,0 +1,59 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>俱乐部广告管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+			    <div class="col-sm-3">
+				    <div class="input-group">
+					<div class="input-group-btn">
+						<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">俱乐部</button>
+							</div>
+					<input type="text" class="form-control" id="clubSelBtn" data-id="${clubId}">
+					<div class="input-group-btn">
+					    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					    </button>
+					    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+					    </ul>
+					</div>
+				    </div>
+				</div>
+
+                            <div class="col-sm-3">
+                                <#NameCon id="condition" name="名称" />
+                            </div>
+                            <div class="col-sm-3">
+                                <#button name="搜索" icon="fa-search" clickFun="ClubAdv.search()"/>
+                            </div>
+                        </div>
+                        <div class="hidden-xs" id="ClubAdvTableToolbar" role="group">
+                            @if(shiro.hasPermission("/clubAdv/add")){
+                                <#button name="添加" icon="fa-plus" clickFun="ClubAdv.openAddClubAdv()"/>
+                            @}
+                            @if(shiro.hasPermission("/clubAdv/update")){
+                                <#button name="修改" icon="fa-edit" clickFun="ClubAdv.openClubAdvDetail()" space="true"/>
+                            @}
+                            @if(shiro.hasPermission("/clubAdv/delete")){
+                                <#button name="删除" icon="fa-remove" clickFun="ClubAdv.delete()" space="true"/>
+                            @}
+                        </div>
+                        <#table id="ClubAdvTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/clubAdv/clubAdv.js"></script>
+<script src="${ctxPath}/static/js/common/club-select-btn.js"></script>
+<script>
+	//俱乐部下拉筛选
+	ClubSelectBtn.init(${clubId}, '#clubSelBtn');
+</script>
+@}

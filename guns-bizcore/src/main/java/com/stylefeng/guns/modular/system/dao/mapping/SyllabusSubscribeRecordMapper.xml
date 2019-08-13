@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SyllabusSubscribeRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SyllabusSubscribeRecord">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="syllabus_id" property="syllabusId" />
+        <result column="syllabus_name" property="syllabusName" />
+        <result column="group_id" property="groupId" />
+        <result column="vip_id" property="vipId" />
+        <result column="realname" property="realname" />
+        <result column="phone" property="phone" />
+        <result column="classroom_id" property="classroomId" />
+        <result column="seat_number" property="seatNumber" />
+        <result column="class_start_time" property="classStartTime" />
+        <result column="class_end_time" property="classEndTime" />
+        <result column="card_type" property="cardType" />
+        <result column="card_id" property="cardId" />
+        <result column="card_deduct_num" property="cardDeductNum" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="Membership_id" property="MembershipId" />
+        <result column="Membership_name" property="MembershipName" />
+        <result column="remark" property="remark" />
+        <result column="insert_time" property="insertTime" />
+        <result column="user_type" property="userType" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, syllabus_id AS syllabusId, syllabus_name AS syllabusName, group_id AS groupId, vip_id AS vipId, realname, phone, classroom_id AS classroomId, seat_number AS seatNumber, class_start_time AS classStartTime, class_end_time AS classEndTime, card_type AS cardType, card_id AS cardId, card_deduct_num AS cardDeductNum, coach_id AS coachId, coach_name AS coachName, Membership_id AS MembershipId, Membership_name AS MembershipName, remark, insert_time AS insertTime, user_type AS userType, status
+    </sql>
+
+</mapper>

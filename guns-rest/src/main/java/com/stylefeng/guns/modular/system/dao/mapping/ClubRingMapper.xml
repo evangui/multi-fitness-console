@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ClubRingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.ClubRing">
+        <id column="id" property="id" />
+        <result column="ring_num" property="ringNum" />
+        <result column="club_id" property="clubId" />
+        <result column="vip_id" property="vipId" />
+        <result column="realname" property="realname" />
+        <result column="phone" property="phone" />
+        <result column="insert_time" property="insertTime" />
+        <result column="admission_record_id" property="admissionRecordId" />
+        <result column="admission_remark" property="admissionRemark" />
+        <result column="borrow_time" property="borrowTime" />
+        <result column="return_time" property="returnTime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, ring_num AS ringNum, club_id AS clubId, vip_id AS vipId, realname, phone, insert_time AS insertTime, admission_record_id AS admissionRecordId, admission_remark AS admissionRemark, borrow_time AS borrowTime, return_time AS returnTime, status
+    </sql>
+
+</mapper>

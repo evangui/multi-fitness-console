@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.CardSpendLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.CardSpendLog">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="vip_id" property="vipId" />
+        <result column="user_id" property="userId" />
+        <result column="card_id" property="cardId" />
+        <result column="title" property="title" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="membership_id" property="membershipId" />
+        <result column="membership_name" property="membershipName" />
+        <result column="reception_id" property="receptionId" />
+        <result column="reception_name" property="receptionName" />
+        <result column="remark" property="remark" />
+        <result column="reception_remark" property="receptionRemark" />
+        <result column="unit_price" property="unitPrice" />
+        <result column="costs" property="costs" />
+        <result column="last_counts" property="lastCounts" />
+        <result column="cost_money" property="costMoney" />
+        <result column="last_money" property="lastMoney" />
+        
+        <result column="type" property="type" />
+        <result column="syllabus_id" property="syllabusId" />
+        <result column="is_syllabus_sub" property="isSyllabusSub" />
+        <result column="user_realname" property="userRealname" />
+        <result column="ip_address" property="ipAddress" />
+        <result column="user_phone" property="userPhone" />
+        <result column="insert_time" property="insertTime" />
+        <result column="comment_content" property="commentContent" />
+        <result column="comment_rank" property="commentRank" />
+        <result column="comment_tags" property="commentTags" />
+        <result column="conform_code" property="conformCode" />
+        <result column="port" property="port" />
+        <result column="log_type" property="logType" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, vip_id AS vipId,user_id AS userId, card_id AS cardId, title, coach_id AS coachId,coach_name AS coachName, 
+        last_counts AS lastCounts, cost_money AS costMoney, last_money AS lastMoney,
+        membership_id AS membershipId, reception_id AS receptionId, remark, reception_remark AS receptionRemark, unit_price AS unitPrice, costs, type, syllabus_id AS syllabusId, is_syllabus_sub AS isSyllabusSub, user_realname AS userRealname, ip_address AS ipAddress, user_phone AS userPhone, insert_time AS insertTime, comment_content AS commentContent, comment_rank AS commentRank, comment_tags AS commentTags, conform_code AS conformCode,
+        membership_name AS membershipName, rcepteion_name AS rcepteionName, port,log_type AS logType
+    </sql>
+
+</mapper>

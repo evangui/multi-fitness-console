@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ClubMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Club">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="abbreviate" property="abbreviate" />
+        <result column="logo" property="logo" />
+        <result column="background" property="background" />
+        <result column="qrcode_img" property="qrcodeImg" />
+        <result column="micro_website" property="microWebsite" />
+        <result column="lng" property="lng" />
+        <result column="lat" property="lat" />
+        <result column="club_province" property="clubProvince" />
+        <result column="club_city" property="clubCity" />
+        <result column="club_area" property="clubArea" />
+        <result column="club_address" property="clubAddress" />
+        <result column="club_style" property="clubStyle" />
+        <result column="parent_id" property="parentId" />
+        <result column="trial_club" property="trialClub" />
+        <result column="remark_by" property="remarkBy" />
+        <result column="user_count" property="userCount" />
+        <result column="start_time" property="startTime" />
+        <result column="expire_time" property="expireTime" />
+        <result column="not_enough_cancel_time" property="notEnoughCancelTime" />
+        <result column="shorturl" property="shorturl" />
+        <result column="cash_amount" property="cashAmount" />
+        <result column="apply_time" property="applyTime" />
+        <result column="apply_num" property="applyNum" />
+        <result column="chat" property="chat" />
+        <result column="points_status" property="pointsStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, abbreviate, logo, background, qrcode_img as qrcodeImg, lng, lat, club_province AS clubProvince, club_city AS clubCity, club_area AS clubArea, club_address AS clubAddress, club_style AS clubStyle, parent_id AS parentId, trial_club AS trialClub, remark_by AS remarkBy, user_count AS userCount, start_time AS startTime, expire_time AS expireTime, not_enough_cancel_time AS notEnoughCancelTime, cash_amount AS cashAmount, apply_time AS applyTime, apply_num AS applyNum
+    </sql>
+    
+    <sql id="Min_Column_List">
+        id, name
+    </sql>
+    
+    <select id="searchList" resultType="map">
+		select
+		<include refid="Min_Column_List" />
+		from biz_club
+		where 1
+		<if test="condition != null and condition != ''">
+			and name like CONCAT('%',#{condition},'%')
+		</if>
+	</select>
+
+</mapper>

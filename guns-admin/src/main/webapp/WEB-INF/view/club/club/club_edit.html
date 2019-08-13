@@ -1,0 +1,73 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+            <input type="hidden" id="clubStyleValue" value="${item.clubStyle}">
+            <input type="hidden" id="trialClubValue" value="${item.trialClub}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" value="${item.id}" underline="true"  readonly="true"/>
+                            <#input id="name" name="俱乐部名称" value="${item.name}" underline="true"/>
+                            <#input id="clubSort" name="排序权重值" value="${item.clubSort}" underline="true"/>
+                            <#input id="abbreviate" name="短信后缀" value="${item.abbreviate}" underline="true"/>
+                            <#input id="logo" name="logo" value="${item.logo}" underline="true"/>
+                            <#input id="background" name="背景图" value="${item.background}" underline="true"/>
+                            <#input id="qrcodeImg" name="俱乐部二维码" value="${item.qrcodeImg}" underline="true"/>
+                            <#input id="microWebsite" name="微官网" value="${item.microWebsite}" underline="true"/>
+                            <#input id="lng" name="经度" value="${item.lng}" underline="true"/>
+                            <#input id="lat" name="纬度" value="${item.lat}" underline="true"/>
+                            <!-- <#input id="clubProvince" name="省份ID" value="${item.clubProvince}" underline="true"/>
+                            <#input id="clubCity" name="城市id" value="${item.clubCity}" underline="true"/>
+                            <#input id="clubArea" name="地区id" value="${item.clubArea}" underline="true"/> -->
+                            <#input readonly="true" id="authCode" name="认证码" value="${item.authCode}" underline="true"/>
+                            <#input id="clubAddress" name="详细地区" value="${item.clubAddress}" underline="true"/>
+                            <#select id="clubStyle" name="俱乐部类型" underline="true">
+								<option value="1" >工作室</option>
+								<option value="2">俱乐部</option>
+							</#select>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="parentId" name="所属俱乐部ID" value="${item.parentId}" underline="true"/>
+                            <#select id="trialClub" name="是否试用" underline="true">
+								<option value="0" >否</option>
+								<option value="1">是</option>
+							</#select>
+							
+                            <#input id="clubPhone" name="联系电话" value="${item.clubPhone}" underline="true"/>
+                            <#input id="remarkBy" name="备注人" value="${item.remarkBy}" underline="true"/>
+                            <#input id="userCount" name="用户数" value="${item.userCount}" underline="true"/>
+                            
+                            <#input id="startTime" name="生效开始时间" underline="true" type="datetime"
+								value="${startTime}"
+								clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+							<#input id="expireTime" name="过期时间" underline="true" type="datetime"
+								value="${expireTime}"
+								clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+                            <#input id="notEnoughCancelTime" name="过期保留时间（天）" value="${item.notEnoughCancelTime}" underline="true"/>
+                            <#input id="shorturl" name="推广短链接" value="${item.shorturl}" underline="true"/>
+                            <#input id="cashAmount" name="剩余金额" value="${item.cashAmount}" underline="true"/>
+                            <#input id="applyTime" name="会员最近申请时间" underline="true" type="datetime"
+								value="${applyTime}"
+								clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+                            <#input id="applyNum" name="总申请人数" value="${item.applyNum}" underline="true"/>
+                            <!-- <#input id="chat" name="是否开启会员间聊天" value="${item.chat}" underline="true"/>
+                            <#input id="pointsStatus" name="是否开启积分系统" value="${item.pointsStatus}" /> -->
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ClubInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ClubInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/club/club_info.js"></script>
+@}

@@ -1,0 +1,74 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="会员id" value="${item.id}" underline="true"/>
+                            <#input id="userId" name="用户id" value="${item.userId}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" underline="true"/>
+                            <#input id="nickname" name="昵称" value="${item.nickname}" underline="true"/>
+                            <#input id="realavatar" name="会员头像" value="${item.realavatar}" underline="true"/>
+                            <#input id="payPasswd" name="支付密码" value="${item.payPasswd}" underline="true"/>
+                            <#input id="gender" name="会员性别（0：女，1：男）" value="${item.gender}" underline="true"/>
+                            <#input id="phone" name="手机号" value="${item.phone}" underline="true"/>
+                            <#input id="birthday" name="生日" value="${item.birthday}" underline="true"/>
+                            <#input id="idCardNumber" name="身份证号" value="${item.idCardNumber}" underline="true"/>
+                            <#input id="cardId" name="会员卡ID" value="${item.cardId}" underline="true"/>
+                            <#input id="cardNumber" name="会员卡号" value="${item.cardNumber}" underline="true"/>
+                            <#input id="cardType" name="会员卡类型文字，如：月卡，年卡等自定义" value="${item.cardType}" underline="true"/>
+                            <#input id="coachId" name="所属教练ID" value="${item.coachId}" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" value="${item.coachName}" underline="true"/>
+                            <#input id="introducePersonCount" name="介绍会员数" value="${item.introducePersonCount}" underline="true"/>
+                            <#input id="introducePersonId" name="介绍人ID" value="${item.introducePersonId}" underline="true"/>
+                            <#input id="introducePersonName" name="介绍人名称" value="${item.introducePersonName}" underline="true"/>
+                            <#input id="membershipId" name="会籍ID" value="${item.membershipId}" underline="true"/>
+                            <#input id="membershipName" name="会籍名称" value="${item.membershipName}" underline="true"/>
+                            <#input id="country" name="国家号码编号" value="${item.country}" underline="true"/>
+                            <#input id="address" name="家庭住址" value="${item.address}" underline="true"/>
+                            <#input id="remark" name="备注" value="${item.remark}" underline="true"/>
+                            <#input id="points" name="积分" value="${item.points}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="usedPoints" name="已用积分" value="${item.usedPoints}" underline="true"/>
+                            <#input id="isImport" name="是否是导入" value="${item.isImport}" underline="true"/>
+                            <#input id="isUniverseVip" name="是否通用vip" value="${item.isUniverseVip}" underline="true"/>
+                            <#input id="lastMaintainRecord" name="最近跟进记录" value="${item.lastMaintainRecord}" underline="true"/>
+                            <#input id="lastMaintainTime" name="上次维护时间" value="${item.lastMaintainTime}" underline="true"/>
+                            <#input id="lastSignTime" name="上次签到时间" value="${item.lastSignTime}" underline="true"/>
+                            <#input id="admissionTime" name="入会时间" value="${item.admissionTime}" underline="true"/>
+                            <#input id="admissionRemark" name="入会备注" value="${item.admissionRemark}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="updateTime" name="更新时间" value="${item.updateTime}" underline="true"/>
+                            <#input id="sourceId" name="客户来源" value="${item.sourceId}" underline="true"/>
+                            <#input id="personalTrainerCardUsedCounts" name="私教卡已用次数" value="${item.personalTrainerCardUsedCounts}" underline="true"/>
+                            <#input id="personalTrainerCardCounts" name="私教卡总次数" value="${item.personalTrainerCardCounts}" underline="true"/>
+                            <#input id="personalTrainerCardNum" name="私教卡数量" value="${item.personalTrainerCardNum}" underline="true"/>
+                            <#input id="onceCardUsedCounts" name="次卡已用次数" value="${item.onceCardUsedCounts}" underline="true"/>
+                            <#input id="onceCardCounts" name="次卡总次数" value="${item.onceCardCounts}" underline="true"/>
+                            <#input id="onceCardNum" name="次卡数量" value="${item.onceCardNum}" underline="true"/>
+                            <#input id="storedValueCardUsedCounts" name="储值卡已用次数" value="${item.storedValueCardUsedCounts}" underline="true"/>
+                            <#input id="storedValueCardCounts" name="储值卡总次数" value="${item.storedValueCardCounts}" underline="true"/>
+                            <#input id="storedValueCardNum" name="储值卡数量" value="${item.storedValueCardNum}" underline="true"/>
+                            <#input id="expireTime" name="时间卡过期时间" value="${item.expireTime}" underline="true"/>
+                            <#input id="expireStatus" name="时间卡状态（0无卡 1未开卡 2正常 3已过期 ）" value="${item.expireStatus}" underline="true"/>
+                            <#input id="labelLevels" name="维护跟进的关注度：0未设置 1普通 2高关注 3不维护" value="${item.labelLevels}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="VipUserInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="VipUserInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/member/vipUser/vipUser_info.js"></script>
+@}

@@ -1,0 +1,36 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" underline="true"/>
+                            <#input id="startTime" name="私教每日开始时间秒" underline="true"/>
+                            <#input id="endTime" name="私教每日结束时间秒" underline="true"/>
+                            <#input id="checkType" name="私教卡确认机制"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="delay" name="延迟评价分钟数" underline="true"/>
+                            <#input id="coachType" name="私教类型:1一对一 0一对多" underline="true"/>
+                            <#input id="noVipSub" name="非会员是否能预约" underline="true"/>
+                            <#input id="isShowName" name="显示已预约会员昵称" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="SettingPtrainInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="SettingPtrainInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/setting/settingPtrain/settingPtrain_info.js"></script>
+@}

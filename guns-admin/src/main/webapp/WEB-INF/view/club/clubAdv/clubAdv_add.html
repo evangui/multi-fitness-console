@@ -1,0 +1,39 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="广告自增标识编号" underline="true"/>
+                            <#input id="clubId" name="俱乐部ID" underline="true"/>
+                            <#input id="posId" name="广告位id" underline="true"/>
+                            <#input id="posName" name="广告位名称" underline="true"/>
+                            <#input id="advUrlType" name="0：(跳转到链接)，1:(跳转到详情),2(跳转到列表),3(跳转到文章)" underline="true"/>
+                            <#input id="advTitle" name="广告标题"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="class" name="广告类别：0图片1文字" underline="true"/>
+                            <#input id="content" name="广告内容" underline="true"/>
+                            <#input id="starttime" name="广告开始时间" underline="true"/>
+                            <#input id="endtime" name="广告结束时间" underline="true"/>
+                            <#input id="sort" name="广告排序" underline="true"/>
+                            <#input id="clickNum" name="广告点击数" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ClubAdvInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ClubAdvInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/clubAdv/clubAdv_info.js"></script>
+@}

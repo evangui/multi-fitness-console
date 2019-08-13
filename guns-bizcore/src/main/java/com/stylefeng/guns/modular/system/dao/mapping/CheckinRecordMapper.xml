@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.CheckinRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.CheckinRecord">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="vip_id" property="vipId" />
+        <result column="realname" property="realname" />
+        <result column="phone" property="phone" />
+        <result column="insert_time" property="insertTime" />
+        <result column="last_check_in_time" property="lastCheckInTime" />
+        <result column="check_out_time" property="checkOutTime" />
+        <result column="admission_record_count" property="admissionRecordCount" />
+        <result column="ope_user_id" property="opeUserId" />
+        <result column="ope_username" property="opeUsername" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="banksure" property="banksure" />
+        <result column="bank_remark" property="bankRemark" />
+        <result column="ring_status" property="ringStatus" />
+        <result column="port" property="port" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, vip_id AS vipId, realname, phone, insert_time AS insertTime, last_check_in_time AS lastCheckInTime, check_out_time AS checkOutTime, admission_record_count AS admissionRecordCount, ope_user_id AS opeUserId, ope_username AS opeUsername, status, remark, banksure, bank_remark AS bankRemark, ring_status AS ringStatus, port
+    </sql>
+
+</mapper>

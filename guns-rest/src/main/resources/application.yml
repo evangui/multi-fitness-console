@@ -1,0 +1,128 @@
+rest:
+  auth-open: true #jwt鉴权机制是否开启(true或者false)
+  sign-open: true #签名机制是否开启(true或false)
+
+jwt:
+  header: Authorization   #http请求头所需要的字段
+  secret: mySecret        #jwt秘钥
+  expiration: 43200      #1天 单位:秒
+  mchauth-path: mchauth         #认证请求的路径
+  userauth-path: userauth         #认证请求的路径
+  md5-key: randomKey      #md5加密混淆key
+
+server:
+  port: 9091 #项目端口
+
+mybatis-plus:
+  mapper-locations: classpath*:com/stylefeng/guns/rest/**/mapping/*.xml
+  typeAliasesPackage: com.stylefeng.guns.rest.common.persistence.model
+  global-config:
+    id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    db-column-underline: false
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: false
+    cache-enabled: true #配置的缓存的全局开关
+    lazyLoadingEnabled: true #延时加载的开关
+    multipleResultSetsEnabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+
+# 微信配置
+wechat:
+  miniapp:
+    appid: wx776e60ee1eab35da
+    secret: 17ab36117b4be7d6c6ac7f852587a3fc
+    token: BWSxys2018
+    aesKey: DjM1t1KCxN758OccQNOW9zFcJY4xPDmsGErX4ISFlgV
+    msgDataFormat: JSON
+    
+###################  spring配置  ###################
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password:
+  profiles:
+    active: dev
+    #active: produce
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/view
+  http:
+    converters:
+      preferred-json-mapper: fastjson
+    multipart:
+      max-request-size: 100MB #最大请求大小
+      max-file-size: 100MB #最大文件大小
+      enabled: false
+  devtools:
+    restart:
+      enabled: false #是否开启开发者工具（true/false）
+      additional-paths: src/main/java
+      exclude: static/**,WEB-INF/view/**
+  aop:
+    proxy-target-class: true #false为启用jdk默认动态代理,true为cglib动态代理
+
+---
+
+##########################################################
+###################  开发环境的profile  ###################
+##########################################################
+debug: true
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/xys?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root
+    db-name: xys
+    filters: log4j,wall,mergeStat
+
+project:
+  filedir:
+    path: F:\Workspace\default\java\
+    url: http://localhost/java/
+
+logging:
+  level:
+    root: info
+    com.stylefeng: debug
+    org.springframework.web: DEBUG
+    com.github.binarywang.demo.wx.miniapp: DEBUG
+  path: logs/
+  file: xys.log
+---  
+
+##########################################################
+###################  正式环境的profile  ###################
+##########################################################
+spring:
+  profiles: produce
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/xys?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: hnp
+    password: bws@17!68
+    db-name: xys
+    filters: log4j,wall,mergeStat
+
+project:
+  filedir:
+    path: /home/wwwroot/xysrest.whbws.cn/images/
+    url: http://xysimg.whbws.cn/
+          
+logging:
+  level.root: info
+  #level.root: warn
+  path: logs/
+  file: xys.log
+
+---  
+
+#endpoints:
+#  cors:
+#    allowed-origins:*
+#    allowed-headers:Token,Content-Type,Accept,Authorization
+#    allowed-methods:GET, POST, PUT, DELETE
+#    exposed-headers:header1, header2
+#    max-age:1800 

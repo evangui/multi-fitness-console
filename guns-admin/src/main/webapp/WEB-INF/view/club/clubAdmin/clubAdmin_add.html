@@ -1,0 +1,68 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+	<div class="ibox-content">
+		<div class="form-horizontal" id="defaultForm">
+
+			<input type="hidden" id="id" value="">
+
+			<div class="row">
+				<div class="col-sm-6 b-r">
+					@if(clubId != 0){
+					<#input type="hidden" id="clubId" name="" value="${clubId}" />
+					<#input id="clubId" name="俱乐部" value="${clubName}"
+						disabled="disabled" underline="true" />
+					@} 
+					@else{
+                    <div class="input-group">
+                    	<div class="input-group-btn">
+                    		<button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">选择俱乐部</button>
+     					</div>
+                        <input type="text" class="form-control" id="clubSelBtn" data-id="${clubId}">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            </ul>
+                        </div>
+                    </div>
+					@}
+
+					<#input id="username" name="用户名" underline="true" />
+					<#input id="password" name="密码" underline="true" />
+					<#input id="nickname" name="昵称" underline="true" />
+					
+				</div>
+
+				<div class="col-sm-6">
+					<#input id="phone" name="手机号" underline="true" />
+					
+					<#select id="roles" name="角色" underline="true">
+						<option value="2">超级管理员</option>
+						<option value="10">普通管理员</option>
+					</#select>
+					
+					<#input id="realname" name="姓名" underline="true" />
+				</div>
+			</div>
+
+			<div class="row btn-group-m-t">
+				<div class="col-sm-10">
+					<#button btnCss="info" name="提交" id="ensure" icon="fa-check"
+						clickFun="ClubAdminInfoDlg.addSubmit()" />
+					<#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser"
+						clickFun="ClubAdminInfoDlg.close()" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script src="${ctxPath}/static/modular/club/clubAdmin/clubAdmin_info.js"></script>
+<script src="${ctxPath}/static/js/common/club-select-btn.js"></script>
+<script>
+	//俱乐部下拉筛选
+	ClubSelectBtn.init(${clubId}, '#clubSelBtn');
+</script>
+
+@}

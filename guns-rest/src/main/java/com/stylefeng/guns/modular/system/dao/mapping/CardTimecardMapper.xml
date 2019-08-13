@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.CardTimecardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.CardTimecard">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="vip_id" property="vipId" />
+        <result column="realname" property="realname" />
+        <result column="card_number" property="cardNumber" />
+        <result column="title" property="title" />
+        <result column="card_type_id" property="cardTypeId" />
+        <result column="card_type_name" property="cardTypeName" />
+        <result column="actual_insert_time" property="actualInsertTime" />
+        <result column="open_card_time" property="openCardTime" />
+        <result column="auto_open_card_switch" property="autoOpenCardSwitch" />
+        <result column="start_use_time" property="startUseTime" />
+        <result column="expire_days" property="expireDays" />
+        <result column="expire_time" property="expireTime" />
+        <result column="insert_time" property="insertTime" />
+        <result column="suspend_start_time" property="suspendStartTime" />
+        <result column="suspend_end_time" property="suspendEndTime" />
+        <result column="actual_money" property="actualMoney" />
+        <result column="retainage" property="retainage" />
+        <result column="auto_open_card_switch" property="autoOpenCardSwitch" />
+        <result column="balance" property="balance" />
+        <result column="banksure" property="banksure" />
+        <result column="contract_id" property="contractId" />
+        <result column="contract_number" property="contractNumber" />
+        <result column="front_money_status" property="frontMoneyStatus" />
+        <result column="is_renew_card" property="isRenewCard" />
+        <result column="is_united_card" property="isUnitedCard" />
+        <result column="membership_id" property="membershipId" />
+        <result column="membership_name" property="membershipName" />
+        <result column="ope_user_id" property="opeUserId" />
+        <result column="ope_username" property="opeUsername" />
+        <result column="pay_method" property="payMethod" />
+        <result column="phone" property="phone" />
+        <result column="source_id" property="sourceId" />
+        <result column="source_name" property="sourceName" />
+        <result column="remark" property="remark" />
+        <result column="port" property="port" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, vip_id AS vipId, realname,card_number as cardNumber, title, card_type_id AS cardTypeId, card_type_name AS cardTypeName, 
+        actual_insert_time AS actualInsertTime, open_card_time AS openCardTime, auto_open_card_switch as autoOpenCardSwitch,
+         start_use_time AS startUseTime, expire_days AS expireDays, expire_time AS expireTime, insert_time AS insertTime, suspend_start_time AS suspendStartTime, suspend_end_time AS suspendEndTime, actual_money AS actualMoney, retainage, auto_open_card_switch AS autoOpenCardSwitch, balance, banksure, 
+         contract_id AS contractId, contract_number AS contractNumber, front_money_status AS frontMoneyStatus, is_renew_card AS isRenewCard, is_united_card AS isUnitedCard, membership_id AS membershipId, membership_name AS membershipName, ope_user_id AS opeUserId, ope_username AS opeUsername, pay_method AS payMethod, phone, source_id AS sourceId, source_name AS sourceName, remark, port
+    </sql>
+
+</mapper>

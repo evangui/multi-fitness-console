@@ -1,0 +1,35 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="会员id" value="${item.id}" underline="true"/>
+                            <#input id="userId" name="" value="${item.userId}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="nickname" name="昵称" value="${item.nickname}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="avatar" name="会员头像" value="${item.avatar}" underline="true"/>
+                            <#input id="gender" name="会员性别（0未知 1男 2女）" value="${item.gender}" underline="true"/>
+                            <#input id="phone" name="手机号" value="${item.phone}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="UserClubInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="UserClubInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/member/userClub/userClub_info.js"></script>
+@}

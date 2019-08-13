@@ -1,0 +1,41 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" underline="true"/>
+                            <#input id="groupId" name="课程种类id" underline="true"/>
+                            <#input id="title" name="课程名称" underline="true"/>
+                            <#input id="coachId" name="所属教练ID" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" underline="true"/>
+                            <#input id="startTime" name="开始时间"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="endTime" name="结束时间" underline="true"/>
+                            <#input id="delTime" name="删除时间" underline="true"/>
+                            <#input id="lessonTotal" name="总课程数" underline="true"/>
+                            <#input id="delManager" name="操作人" underline="true"/>
+                            <#input id="week" name="周每日排期配置" underline="true"/>
+                            <#input id="insertTime" name="录入时间" underline="true"/>
+                            <#input id="status" name="状态 1正常 0已删除" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="SyllabusScheduleSettingInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="SyllabusScheduleSettingInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/syllabus/syllabusScheduleSetting/syllabusScheduleSetting_info.js"></script>
+@}

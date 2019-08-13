@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ClubCoachMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.ClubCoach">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="user_id" property="userId" />
+        <result column="nickname" property="nickname" />
+        <result column="realname" property="realname" />
+        <result column="avatar" property="avatar" />
+        <result column="desc" property="desc" />
+        <result column="good_at" property="goodAt" />
+        <result column="order" property="order" />
+        <result column="status" property="status" />
+        <result column="month_ptrain_count" property="monthPtrainCount" />
+        <result column="month_avg_score" property="monthAvgScore" />
+        <result column="vip_count" property="vipCount" />
+        <result column="auth" property="auth" />
+        <result column="insert_time" property="insertTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, user_id AS userId, nickname, realname, avatar, desc, good_at AS goodAt, order, status, month_ptrain_count AS monthPtrainCount, month_avg_score AS monthAvgScore, vip_count AS vipCount, auth, insert_time AS insertTime
+    </sql>
+
+</mapper>

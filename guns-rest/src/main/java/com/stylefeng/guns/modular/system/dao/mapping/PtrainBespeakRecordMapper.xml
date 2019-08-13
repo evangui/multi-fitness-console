@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.PtrainBespeakRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.PtrainBespeakRecord">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="vip_id" property="vipId" />
+        <result column="user_id" property="userId" />
+        <result column="realname" property="realname" />
+        <result column="phone" property="phone" />
+        <result column="from_time" property="fromTime" />
+        <result column="to_time" property="toTime" />
+        <result column="date" property="date" />
+        <result column="membership_id" property="membershipId" />
+        <result column="membership_name" property="membershipName" />
+        <result column="insert_time" property="insertTime" />
+        <result column="remark" property="remark" />
+        <result column="card_type" property="cardType" />
+        <result column="card_id" property="cardId" />
+        <result column="card_deduct_num" property="cardDeductNum" />
+        <result column="record_type" property="recordType" />
+        <result column="user_type" property="userType" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, coach_id AS coachId, coach_name AS coachName, vip_id AS vipId, user_id AS userId, realname, phone, from_time AS fromTime, to_time AS toTime, date, membership_id AS membershipId, membership_name AS membershipName, insert_time AS insertTime, remark, card_type AS cardType, card_id AS cardId, card_deduct_num AS cardDeductNum, record_type AS recordType, user_type AS userType, status
+    </sql>
+
+</mapper>

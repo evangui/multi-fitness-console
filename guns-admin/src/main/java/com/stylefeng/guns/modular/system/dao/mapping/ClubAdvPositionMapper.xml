@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ClubAdvPositionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.ClubAdvPosition">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="display" property="display" />
+        <result column="enable" property="enable" />
+        <result column="width" property="width" />
+        <result column="height" property="height" />
+        <result column="click_num" property="clickNum" />
+        <result column="default_content" property="defaultContent" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, name, type, display, enable, width, height, click_num AS clickNum, default_content AS defaultContent
+    </sql>
+
+</mapper>

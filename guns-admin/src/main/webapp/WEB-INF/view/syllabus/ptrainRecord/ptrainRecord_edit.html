@@ -1,0 +1,49 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="vipId" name="会员id" value="${item.vipId}" underline="true"/>
+                            <#input id="onceCardId" name="次卡id" value="${item.onceCardId}" underline="true"/>
+                            <#input id="coachId" name="教练id" value="${item.coachId}" underline="true"/>
+                            <#input id="membershipId" name="会籍id" value="${item.membershipId}" underline="true"/>
+                            <#input id="receptionId" name="前台id" value="${item.receptionId}" underline="true"/>
+                            <#input id="remark" name="" value="${item.remark}" underline="true"/>
+                            <#input id="receptionRemark" name="前台备注" value="${item.receptionRemark}" underline="true"/>
+                            <#input id="unitPrice" name="单价" value="${item.unitPrice}" underline="true"/>
+                            <#input id="costs" name="扣除次数" value="${item.costs}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="type" name="类型，含义待定" value="${item.type}" underline="true"/>
+                            <#input id="syllabusId" name="课程id or 私教预约记录id" value="${item.syllabusId}" underline="true"/>
+                            <#input id="isSyllabusSub" name="是否是团操课预约-用以区分团操课or私教课" value="${item.isSyllabusSub}" underline="true"/>
+                            <#input id="userRealname" name="用户姓名" value="${item.userRealname}" underline="true"/>
+                            <#input id="ipAddress" name="用户ip" value="${item.ipAddress}" underline="true"/>
+                            <#input id="userPhone" name="用户手机号" value="${item.userPhone}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="commentContent" name="用户评价" value="${item.commentContent}" underline="true"/>
+                            <#input id="commentRank" name="评分" value="${item.commentRank}" underline="true"/>
+                            <#input id="commentTags" name="评论标签，多个用,分隔" value="${item.commentTags}" underline="true"/>
+                            <#input id="conformCode" name="确认码-标志记录的唯一性-通常在记录id不明确时由客户端生成" value="${item.conformCode}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="PtrainRecordInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="PtrainRecordInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/syllabus/ptrainRecord/ptrainRecord_info.js"></script>
+@}

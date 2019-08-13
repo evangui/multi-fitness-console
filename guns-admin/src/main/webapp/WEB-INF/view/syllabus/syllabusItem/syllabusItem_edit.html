@@ -1,0 +1,41 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="groupId" name="课程种类id" value="${item.groupId}" underline="true"/>
+                            <#input id="scheduleSettingId" name="课程排期设置id" value="${item.scheduleSettingId}" underline="true"/>
+                            <#input id="day" name="日" value="${item.day}" underline="true"/>
+                            <#input id="startTime" name="开始时间" value="${item.startTime}" underline="true"/>
+                            <#input id="endTime" name="结束时间" value="${item.endTime}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="hasSubscribe" name="已预约人数" value="${item.hasSubscribe}" underline="true"/>
+                            <#input id="status" name="课程状态  1未上课  2已上课 3已取消" value="${item.status}" underline="true"/>
+                            <#input id="title" name="课程名称" value="${item.title}" underline="true"/>
+                            <#input id="coachId" name="所属教练ID" value="${item.coachId}" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" value="${item.coachName}" underline="true"/>
+                            <#input id="temporaryCoach" name="临时教练" value="${item.temporaryCoach}" underline="true"/>
+                            <#input id="insertTime" name="录入时间" value="${item.insertTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="SyllabusItemInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="SyllabusItemInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/syllabus/syllabusItem/syllabusItem_info.js"></script>
+@}

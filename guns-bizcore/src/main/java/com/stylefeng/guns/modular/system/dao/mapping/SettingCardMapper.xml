@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SettingCardMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SettingCard">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="leave_days" property="leaveDays" />
+        <result column="less_leave_days" property="lessLeaveDays" />
+        <result column="deadline" property="deadline" />
+        <result column="record" property="record" />
+        <result column="left_amount_hide" property="leftAmountHide" />
+        <result column="front_consume_switch" property="frontConsumeSwitch" />
+        <result column="once_card_used_pass" property="onceCardUsedPass" />
+        <result column="card_start_use_time_switch" property="cardStartUseTimeSwitch" />
+        <result column="vip_passwd" property="vipPasswd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, leave_days AS leaveDays, less_leave_days AS lessLeaveDays, deadline, record, left_amount_hide AS leftAmountHide, front_consume_switch AS frontConsumeSwitch, once_card_used_pass AS onceCardUsedPass, card_start_use_time_switch AS cardStartUseTimeSwitch, vip_passwd AS vipPasswd
+    </sql>
+
+</mapper>

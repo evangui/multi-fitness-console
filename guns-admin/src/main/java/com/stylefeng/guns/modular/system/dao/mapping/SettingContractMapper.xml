@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SettingContractMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SettingContract">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="contract_status" property="contractStatus" />
+        <result column="contract_vip" property="contractVip" />
+        <result column="contract_recharge" property="contractRecharge" />
+        <result column="contract_contract" property="contractContract" />
+        <result column="contract_sign" property="contractSign" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, contract_status AS contractStatus, contract_vip AS contractVip, contract_recharge AS contractRecharge, contract_contract AS contractContract, contract_sign AS contractSign
+    </sql>
+
+</mapper>

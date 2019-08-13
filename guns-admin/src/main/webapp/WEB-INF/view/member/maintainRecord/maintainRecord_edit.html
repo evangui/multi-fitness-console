@@ -1,0 +1,36 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="会员id" value="${item.id}" underline="true"/>
+                            <#input id="vipUserId" name="vip id" value="${item.vipUserId}" underline="true"/>
+                            <#input id="vipUserType" name="是否是vip用户 0否 1是" value="${item.vipUserType}" underline="true"/>
+                            <#input id="membershipId" name="会籍ID" value="${item.membershipId}" underline="true"/>
+                            <#input id="content" name="跟进内容说明" value="${item.content}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="isTodo" name="是否是待办 0否 1是" value="${item.isTodo}" underline="true"/>
+                            <#input id="recordType" name="跟进类型 0潜在客户跟进 3vip用户跟进" value="${item.recordType}" underline="true"/>
+                            <#input id="status" name="状态,字段待定" value="${item.status}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="MaintainRecordInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="MaintainRecordInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/member/maintainRecord/maintainRecord_info.js"></script>
+@}

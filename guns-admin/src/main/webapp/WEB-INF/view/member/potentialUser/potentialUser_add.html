@@ -1,0 +1,47 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="会员id" underline="true"/>
+                            <#input id="userId" name="用户id" underline="true"/>
+                            <#input id="realname" name="姓名" underline="true"/>
+                            <#input id="nickname" name="昵称" underline="true"/>
+                            <#input id="realavatar" name="会员头像" underline="true"/>
+                            <#input id="gender" name="会员性别（0：女，1：男）" underline="true"/>
+                            <#input id="phone" name="手机号" underline="true"/>
+                            <#input id="coachId" name="所属教练ID" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" underline="true"/>
+                            <#input id="membershipId" name="会籍ID"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="membershipName" name="会籍名称" underline="true"/>
+                            <#input id="remark" name="备注" underline="true"/>
+                            <#input id="isImport" name="是否是导入" underline="true"/>
+                            <#input id="lastMaintainRecord" name="最近跟进记录" underline="true"/>
+                            <#input id="lastMaintainTime" name="上次维护时间" underline="true"/>
+                            <#input id="insertTime" name="添加时间" underline="true"/>
+                            <#input id="sourceId" name="客户来源id" underline="true"/>
+                            <#input id="sourceName" name="客户来源名" underline="true"/>
+                            <#input id="labelLevels" name="维护跟进的关注度：0未设置 1普通 2高关注 3不维护" underline="true"/>
+                            <#input id="isVipUser" name="是否已转化为vip" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="PotentialUserInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="PotentialUserInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/member/potentialUser/potentialUser_info.js"></script>
+@}

@@ -1,0 +1,44 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+            <input type="hidden" id="rolesValue" value="${item.roles}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键id" value="${item.id}" underline="true" readonly="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true" readonly="true"/>
+                            <#input id="username" name="用户名" value="${item.username}" underline="true"/>
+                            <#input id="password" name="密码" value="" underline="true" placeholder="默认留空不修改密码"/>
+                            <#input type="hidden" id="salt" name="" value="${item.salt}"/>
+                            <#input id="nickname" name="昵称" value="${item.nickname}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="phone" name="手机号" value="${item.phone}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" underline="true" />
+                            <#input id="loginCount" name="登录次数" value="${item.loginCount}" underline="true"/>
+                            <#input id="lastLoginTime" name="上次登录时间" value="${item.lastLoginTime}" underline="true" readonly="true"/>
+                            <#input id="authority" name="json权限数组" value="${item.authority}" underline="true" readonly="true"/>
+                            <#select id="roles" name="角色" underline="true">
+								<option value="2" >超级管理员</option>
+								<option value="10">普通管理员</option>
+							</#select>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ClubAdminInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ClubAdminInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/clubAdmin/clubAdmin_info.js"></script>
+@}

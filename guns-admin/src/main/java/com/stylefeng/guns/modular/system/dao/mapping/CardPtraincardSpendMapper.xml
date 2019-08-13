@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.CardPtraincardSpendMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.CardPtraincardSpend">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="card_id" property="cardId" />
+        <result column="vip_id" property="vipId" />
+        <result column="syllabus_id" property="syllabusId" />
+        <result column="realname" property="realname" />
+        <result column="costs" property="costs" />
+        <result column="insert_time" property="insertTime" />
+        <result column="unit_price" property="unitPrice" />
+        <result column="title" property="title" />
+        <result column="rcepteion_id" property="rcepteionId" />
+        <result column="rcepteion_name" property="rcepteionName" />
+        <result column="reception_remark" property="receptionRemark" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="membership_id" property="membershipId" />
+        <result column="membership_name" property="membershipName" />
+        <result column="ope_user_id" property="opeUserId" />
+        <result column="ope_username" property="opeUsername" />
+        <result column="phone" property="phone" />
+        <result column="remark" property="remark" />
+        <result column="card_status" property="cardStatus" />
+        <result column="port" property="port" />
+        <result column="is_syllabus_sub" property="isSyllabusSub" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, card_id AS cardId, vip_id AS vipId, syllabus_id AS syllabusId, realname, costs, insert_time AS insertTime, unit_price AS unitPrice, title, rcepteion_id AS rcepteionId, rcepteion_name AS rcepteionName, reception_remark AS receptionRemark, coach_id AS coachId, coach_name AS coachName, membership_id AS membershipId, membership_name AS membershipName, ope_user_id AS opeUserId, ope_username AS opeUsername, phone, remark, card_status AS cardStatus, port, is_syllabus_sub AS isSyllabusSub
+    </sql>
+
+</mapper>

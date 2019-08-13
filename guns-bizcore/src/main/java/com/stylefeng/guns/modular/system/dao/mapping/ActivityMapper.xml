@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ActivityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Activity">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="type" property="type" />
+        <result column="title" property="title" />
+        <result column="cover" property="cover" />
+        <result column="editPwd" property="editPwd" />
+        <result column="course_address" property="courseAddress" />
+        <result column="course_time" property="courseTime" />
+        <result column="number" property="number" />
+        <result column="signCode" property="signCode" />
+        <result column="content" property="content" />
+        <result column="teachers" property="teachers" />
+        <result column="buyTimes" property="buyTimes" />
+        <result column="total_fee" property="totalFee" />
+        <result column="field_address" property="fieldAddress" />
+        <result column="field_phone" property="fieldPhone" />
+        <result column="enroll_start_time" property="enrollStartTime" />
+        <result column="enroll_end_time" property="enrollEndTime" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="custom_fields" property="customFields" />
+        <result column="projects" property="projects" />
+        <result column="insert_time" property="insertTime" />
+        <result column="sort" property="sort" />
+        <result column="hidden" property="hidden" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, type, title, cover, editPwd, course_address AS courseAddress, course_time AS courseTime, number, signCode, content, teachers, buyTimes, total_fee AS totalFee, field_address AS fieldAddress, field_phone AS fieldPhone, enroll_start_time AS enrollStartTime, enroll_end_time AS enrollEndTime, start_time AS startTime, end_time AS endTime, custom_fields AS customFields, projects, insert_time AS insertTime, sort, hidden, status
+    </sql>
+
+</mapper>

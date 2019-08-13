@@ -1,0 +1,40 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" value="${item.id}" underline="true" readonly="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="userId" name="绑定用户id" value="${item.userId}" underline="true"/>
+                            <#input id="nickname" name="绑定用户昵称" value="${item.nickname}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" underline="true"/>
+                            <#input id="avatar" name="头像" value="${item.avatar}" underline="true"/>
+                            <#input id="status" name="状态 0正常 1异常" value="${item.status}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="screenshotsAlarm" name="截屏提示开关" value="${item.screenshotsAlarm}" underline="true"/>
+                            <#input id="newMemberCounts" name="本月新增会员数量" value="${item.newMemberCounts}" underline="true"/>
+                            <#input id="memberCounts" name="会员数量" value="${item.memberCounts}" underline="true"/>
+                            <#input id="auth" name="权限json串" value="${item.auth}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="type" name="手机端工作人员类型 0会籍 1前台 1主管" value="${item.type}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="StaffSpecialInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="StaffSpecialInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/staffSpecial/staffSpecial_info.js"></script>
+@}

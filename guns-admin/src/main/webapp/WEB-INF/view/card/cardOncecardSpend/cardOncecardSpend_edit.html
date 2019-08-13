@@ -1,0 +1,47 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="cardId" name="私教卡ID" value="${item.cardId}" underline="true"/>
+                            <#input id="vipId" name="用户id" value="${item.vipId}" underline="true"/>
+                            <#input id="syllabusId" name="课程id" value="${item.syllabusId}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" underline="true"/>
+                            <#input id="costs" name="消耗次数" value="${item.costs}" underline="true"/>
+                            <#input id="insertTime" name="录入时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="unitPrice" name="单价" value="${item.unitPrice}" underline="true"/>
+                            <#input id="title" name="私教卡名" value="${item.title}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="coachId" name="所属教练ID" value="${item.coachId}" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" value="${item.coachName}" underline="true"/>
+                            <#input id="membershipId" name="会籍ID" value="${item.membershipId}" underline="true"/>
+                            <#input id="membershipName" name="会籍名称" value="${item.membershipName}" underline="true"/>
+                            <#input id="opeUserId" name="经办人用户ID" value="${item.opeUserId}" underline="true"/>
+                            <#input id="opeUsername" name="经办人用户名" value="${item.opeUsername}" underline="true"/>
+                            <#input id="phone" name="手机号" value="${item.phone}" underline="true"/>
+                            <#input id="remark" name="备注" value="${item.remark}" underline="true"/>
+                            <#input id="cardStatus" name="状态 0正常 1 已删除2 已退次" value="${item.cardStatus}" underline="true"/>
+                            <#input id="port" name="消次端口 0默认 1手机消次 2分享次卡 3前台代消 4门禁扣次 5转卡扣费 6课程预约 7它店消费 8无记录" value="${item.port}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CardOncecardSpendInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CardOncecardSpendInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/card/cardOncecardSpend/cardOncecardSpend_info.js"></script>
+@}

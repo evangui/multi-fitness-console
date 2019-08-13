@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.VipUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.VipUser">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="realname" property="realname" />
+        <result column="nickname" property="nickname" />
+        <result column="realavatar" property="realavatar" />
+        <result column="pay_passwd" property="payPasswd" />
+        <result column="gender" property="gender" />
+        <result column="phone" property="phone" />
+        <result column="birthday" property="birthday" />
+        <result column="id_card_number" property="idCardNumber" />
+        <result column="card_id" property="cardId" />
+        <result column="card_number" property="cardNumber" />
+        <result column="card_type" property="cardType" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="introduce_person_count" property="introducePersonCount" />
+        <result column="introduce_person_id" property="introducePersonId" />
+        <result column="introduce_person_name" property="introducePersonName" />
+        <result column="membership_id" property="membershipId" />
+        <result column="membership_name" property="membershipName" />
+        <result column="country" property="country" />
+        <result column="address" property="address" />
+        <result column="remark" property="remark" />
+        <result column="points" property="points" />
+        <result column="used_points" property="usedPoints" />
+        <result column="is_import" property="isImport" />
+        <result column="is_universe_vip" property="isUniverseVip" />
+        <result column="last_maintain_record" property="lastMaintainRecord" />
+        <result column="last_maintain_time" property="lastMaintainTime" />
+        <result column="last_sign_time" property="lastSignTime" />
+        <result column="admission_time" property="admissionTime" />
+        <result column="admission_remark" property="admissionRemark" />
+        <result column="insert_time" property="insertTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="source_id" property="sourceId" />
+        <result column="personal_trainer_card_used_counts" property="personalTrainerCardUsedCounts" />
+        <result column="personal_trainer_card_counts" property="personalTrainerCardCounts" />
+        <result column="personal_trainer_card_num" property="personalTrainerCardNum" />
+        <result column="once_card_used_counts" property="onceCardUsedCounts" />
+        <result column="once_card_counts" property="onceCardCounts" />
+        <result column="once_card_num" property="onceCardNum" />
+        <result column="stored_value_card_used_counts" property="storedValueCardUsedCounts" />
+        <result column="stored_value_card_counts" property="storedValueCardCounts" />
+        <result column="stored_value_card_num" property="storedValueCardNum" />
+        <result column="expire_time" property="expireTime" />
+        <result column="expire_status" property="expireStatus" />
+        <result column="label_levels" property="labelLevels" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id AS userId, realname, nickname, realavatar, pay_passwd AS payPasswd, gender, phone, birthday, id_card_number AS idCardNumber, card_id AS cardId, card_number AS cardNumber, card_type AS cardType, coach_id AS coachId, coach_name AS coachName, introduce_person_count AS introducePersonCount, introduce_person_id AS introducePersonId, introduce_person_name AS introducePersonName, membership_id AS membershipId, membership_name AS membershipName, country, address, remark, points, used_points AS usedPoints, is_import AS isImport, is_universe_vip AS isUniverseVip, last_maintain_record AS lastMaintainRecord, last_maintain_time AS lastMaintainTime, last_sign_time AS lastSignTime, admission_time AS admissionTime, admission_remark AS admissionRemark, insert_time AS insertTime, update_time AS updateTime, source_id AS sourceId, personal_trainer_card_used_counts AS personalTrainerCardUsedCounts, personal_trainer_card_counts AS personalTrainerCardCounts, personal_trainer_card_num AS personalTrainerCardNum, once_card_used_counts AS onceCardUsedCounts, once_card_counts AS onceCardCounts, once_card_num AS onceCardNum, stored_value_card_used_counts AS storedValueCardUsedCounts, stored_value_card_counts AS storedValueCardCounts, stored_value_card_num AS storedValueCardNum, expire_time AS expireTime, expire_status AS expireStatus, label_levels AS labelLevels
+    </sql>
+
+</mapper>

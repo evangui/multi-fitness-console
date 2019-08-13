@@ -1,0 +1,38 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="leaveDays" name="最长请假天数" value="${item.leaveDays}" underline="true"/>
+                            <#input id="lessLeaveDays" name="最短请假天数" value="${item.lessLeaveDays}" underline="true"/>
+                            <#input id="deadline" name="最晚开卡期限" value="${item.deadline}" underline="true"/>
+                            <#input id="record" name="会员自助查询开关" value="${item.record}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="leftAmountHide" name="剩余额度屏蔽" value="${item.leftAmountHide}" underline="true"/>
+                            <#input id="frontConsumeSwitch" name="定金卡消费开关" value="${item.frontConsumeSwitch}" underline="true"/>
+                            <#input id="onceCardUsedPass" name="次卡消次密码" value="${item.onceCardUsedPass}" underline="true"/>
+                            <#input id="cardStartUseTimeSwitch" name="是否限制卡的开始使用时间" value="${item.cardStartUseTimeSwitch}" underline="true"/>
+                            <#input id="vipPasswd" name="是否开启会员录入密码" value="${item.vipPasswd}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="SettingCardInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="SettingCardInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/setting/settingCard/settingCard_info.js"></script>
+@}

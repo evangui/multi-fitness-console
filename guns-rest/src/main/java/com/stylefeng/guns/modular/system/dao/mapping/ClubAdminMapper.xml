@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ClubAdminMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.ClubAdmin">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="salt" property="salt" />
+        <result column="nickname" property="nickname" />
+        <result column="realname" property="realname" />
+        <result column="phone" property="phone" />
+        <result column="insert_time" property="insertTime" />
+        <result column="login_count" property="loginCount" />
+        <result column="last_login_time" property="lastLoginTime" />
+        <result column="authority" property="authority" />
+        <result column="roles" property="roles" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, username, password, salt, nickname, realname, phone, insert_time AS insertTime, login_count AS loginCount, last_login_time AS lastLoginTime, authority, roles
+    </sql>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.VipUserFieldMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.VipUserField">
+        <id column="field_id" property="fieldId" />
+        <result column="club_id" property="clubId" />
+        <result column="filed_name" property="filedName" />
+        <result column="filed_option" property="filedOption" />
+        <result column="filed_type" property="filedType" />
+        <result column="hidden" property="hidden" />
+        <result column="sort" property="sort" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        field_id AS fieldId, club_id AS clubId, filed_name AS filedName, filed_option AS filedOption, filed_type AS filedType, hidden, sort
+    </sql>
+
+</mapper>

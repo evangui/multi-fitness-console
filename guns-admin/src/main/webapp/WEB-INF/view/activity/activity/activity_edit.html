@@ -1,0 +1,53 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="type" name="活动类型：1 课程预约 2打卡有礼 3大转盘 4 自定义 5 健身体验券" value="${item.type}" underline="true"/>
+                            <#input id="title" name="活动名称" value="${item.title}" underline="true"/>
+                            <#input id="cover" name="封面" value="${item.cover}" underline="true"/>
+                            <#input id="editPwd" name="后台活动编辑密码" value="${item.editPwd}" underline="true"/>
+                            <#input id="courseAddress" name="上课地点" value="${item.courseAddress}" underline="true"/>
+                            <#input id="courseTime" name="上课时间" value="${item.courseTime}" underline="true"/>
+                            <#input id="number" name="人数" value="${item.number}" underline="true"/>
+                            <#input id="signCode" name="签到密码" value="${item.signCode}" underline="true"/>
+                            <#input id="content" name="课程介绍" value="${item.content}" underline="true"/>
+                            <#input id="teachers" name="授课人信息，多个name avatar goodAt desc" value="${item.teachers}" underline="true"/>
+                            <#input id="buyTimes" name="最多购买次数" value="${item.buyTimes}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="totalFee" name="总费用" value="${item.totalFee}" underline="true"/>
+                            <#input id="fieldAddress" name="活动地点" value="${item.fieldAddress}" underline="true"/>
+                            <#input id="fieldPhone" name="联系电话" value="${item.fieldPhone}" underline="true"/>
+                            <#input id="enrollStartTime" name="报名开始时间" value="${item.enrollStartTime}" underline="true"/>
+                            <#input id="enrollEndTime" name="报名结束时间" value="${item.enrollEndTime}" underline="true"/>
+                            <#input id="startTime" name="活动开始时间" value="${item.startTime}" underline="true"/>
+                            <#input id="endTime" name="活动开始时间" value="${item.endTime}" underline="true"/>
+                            <#input id="customFields" name="自定义字段 category inputType optionInfo required sort" value="${item.customFields}" underline="true"/>
+                            <#input id="projects" name="活动项目 title amount number" value="${item.projects}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="sort" name="排序" value="${item.sort}" underline="true"/>
+                            <#input id="hidden" name="是否隐藏" value="${item.hidden}" underline="true"/>
+                            <#input id="status" name="活动状态" value="${item.status}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ActivityInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ActivityInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/activity/activity/activity_info.js"></script>
+@}

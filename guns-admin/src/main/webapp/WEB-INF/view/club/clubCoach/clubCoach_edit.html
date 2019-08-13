@@ -1,0 +1,42 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="userId" name="绑定用户id" value="${item.userId}" underline="true"/>
+                            <#input id="nickname" name="绑定用户昵称" value="${item.nickname}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" underline="true"/>
+                            <#input id="avatar" name="头像" value="${item.avatar}" underline="true"/>
+                            <#input id="desc" name="介绍" value="${item.desc}" underline="true"/>
+                            <#input id="goodAt" name="擅长" value="${item.goodAt}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="order" name="APP排序" value="${item.order}" underline="true"/>
+                            <#input id="status" name="状态 0正常 1异常" value="${item.status}" underline="true"/>
+                            <#input id="monthPtrainCount" name="本月私教次数" value="${item.monthPtrainCount}" underline="true"/>
+                            <#input id="monthAvgScore" name="本月总体评分" value="${item.monthAvgScore}" underline="true"/>
+                            <#input id="vipCount" name="学员个数" value="${item.vipCount}" underline="true"/>
+                            <#input id="auth" name="权限json串" value="${item.auth}" underline="true"/>
+                            <#input id="insertTime" name="添加时间" value="${item.insertTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ClubCoachInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ClubCoachInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/clubCoach/clubCoach_info.js"></script>
+@}

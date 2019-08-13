@@ -1,0 +1,44 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" underline="true"/>
+                            <#input id="vipId" name="用户id" underline="true"/>
+                            <#input id="realname" name="姓名" underline="true"/>
+                            <#input id="phone" name="手机号" underline="true"/>
+                            <#input id="insertTime" name="录入时间" underline="true"/>
+                            <#input id="lastCheckInTime" name="最近签到时间" underline="true"/>
+                            <#input id="checkOutTime" name="签退时间" underline="true"/>
+                            <#input id="admissionRecordCount" name="入场次数"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="opeUserId" name="代签用户ID" underline="true"/>
+                            <#input id="opeUsername" name="代签用户名" underline="true"/>
+                            <#input id="status" name="入场状态 3已入场  2已出场" underline="true"/>
+                            <#input id="remark" name="备注" underline="true"/>
+                            <#input id="banksure" name="财务是否确认" underline="true"/>
+                            <#input id="bankRemark" name="财务备注" underline="true"/>
+                            <#input id="ringStatus" name="借出手环是否未还" underline="true"/>
+                            <#input id="port" name="消次端口 0默认 1前台电脑签到 2前台手机签到 3扫一扫签到 4指纹门禁签到 5智能门禁签到" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CheckinRecordInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CheckinRecordInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/member/checkinRecord/checkinRecord_info.js"></script>
+@}

@@ -1,0 +1,39 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" underline="true"/>
+                            <#input id="ringNum" name="手环编号" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" underline="true"/>
+                            <#input id="vipId" name="用户id" underline="true"/>
+                            <#input id="realname" name="姓名" underline="true"/>
+                            <#input id="phone" name="手机号"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="insertTime" name="录入时间" underline="true"/>
+                            <#input id="admissionRecordId" name="入场记录id" underline="true"/>
+                            <#input id="admissionRemark" name="入场备注" underline="true"/>
+                            <#input id="borrowTime" name="借出时间" underline="true"/>
+                            <#input id="returnTime" name="归还时间" underline="true"/>
+                            <#input id="status" name="借出手环是否未还" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ClubRingInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ClubRingInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/clubRing/clubRing_info.js"></script>
+@}

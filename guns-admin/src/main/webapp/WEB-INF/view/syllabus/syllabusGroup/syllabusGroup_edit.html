@@ -1,0 +1,52 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="courseType" name="课程类型，是否需要预约" value="${item.courseType}" underline="true"/>
+                            <#input id="type" name="类型 0团课 1操课" value="${item.type}" underline="true"/>
+                            <#input id="title" name="课程名称" value="${item.title}" underline="true"/>
+                            <#input id="place" name="上课地点" value="${item.place}" underline="true"/>
+                            <#input id="classroomId" name="教室ID" value="${item.classroomId}" underline="true"/>
+                            <#input id="peopleCount" name="预约上限" value="${item.peopleCount}" underline="true"/>
+                            <#input id="lowerLimit" name="开课人数" value="${item.lowerLimit}" underline="true"/>
+                            <#input id="isSelectNum" name="预约时是否要选座号" value="${item.isSelectNum}" underline="true"/>
+                            <#input id="isSubDeductNum" name="预约时是否先扣费" value="${item.isSubDeductNum}" underline="true"/>
+                            <#input id="coachId" name="所属教练ID" value="${item.coachId}" underline="true"/>
+                            <#input id="coachName" name="所属教练名称" value="${item.coachName}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="temporaryCoach" name="临时教练" value="${item.temporaryCoach}" underline="true"/>
+                            <#input id="tags" name="关键词" value="${item.tags}" underline="true"/>
+                            <#input id="description" name="简介" value="${item.description}" underline="true"/>
+                            <#input id="content" name="内容" value="${item.content}" underline="true"/>
+                            <#input id="isVipUserSub" name="非会员能否预约" value="${item.isVipUserSub}" underline="true"/>
+                            <#input id="image" name="课程图片，单张" value="${item.image}" underline="true"/>
+                            <#input id="startTime" name="开始时间" value="${item.startTime}" underline="true"/>
+                            <#input id="endTime" name="结束时间" value="${item.endTime}" underline="true"/>
+                            <#input id="openGroupDesc" name="开课说明" value="${item.openGroupDesc}" underline="true"/>
+                            <#input id="insertTime" name="录入时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="selfCancel" name="用户能否取消" value="${item.selfCancel}" underline="true"/>
+                            <#input id="hidden" name="是否隐藏" value="${item.hidden}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="SyllabusGroupInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="SyllabusGroupInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/syllabus/syllabusGroup/syllabusGroup_info.js"></script>
+@}

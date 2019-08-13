@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SyllabusScheduleSettingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SyllabusScheduleSetting">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="group_id" property="groupId" />
+        <result column="title" property="title" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="del_time" property="delTime" />
+        <result column="lesson_total" property="lessonTotal" />
+        <result column="del_manager" property="delManager" />
+        <result column="week" property="week" />
+        <result column="insert_time" property="insertTime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, group_id AS groupId, title, coach_id AS coachId, coach_name AS coachName, start_time AS startTime, end_time AS endTime, del_time AS delTime, lesson_total AS lessonTotal, del_manager AS delManager, week, insert_time AS insertTime, status
+    </sql>
+
+</mapper>

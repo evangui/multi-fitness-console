@@ -1,0 +1,55 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="name" name="俱乐部名称" underline="true"/>
+                            <#input id="clubSort" name="排序权重值" underline="true"/>
+                            <#input id="abbreviate" name="短信后缀" underline="true"/>
+                            <#input id="logo" name="logo" underline="true"/>
+                            <#input id="background" name="背景图" underline="true"/>
+                            <#input id="qrcodeImg" name="俱乐部二维码" underline="true"/>
+                            <#input id="microWebsite" name="微官网" underline="true"/>
+                            <#input id="lng" name="经度" underline="true"/>
+                            <#input id="lat" name="纬度" underline="true"/>
+                            <#input id="clubProvince" name="省份ID" underline="true"/>
+                            <#input id="clubCity" name="城市id" underline="true"/>
+                            <#input id="clubArea" name="地区id" underline="true"/>
+                            <#input id="clubAddress" name="详细地区" underline="true"/>
+                            <#input id="clubStyle" name="俱乐部类型: 1工作室 2俱乐部"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="parentId" name="所属俱乐部ID" underline="true"/>
+                            <#input id="trialClub" name="是否试用" underline="true"/>
+                            <#input id="clubPhone" name="联系电话" underline="true"/>
+                            <#input id="remarkBy" name="备注人" underline="true"/>
+                            <#input id="userCount" name="用户数" underline="true"/>
+                             <#input id="startTime" name="生效开始时间" underline="true" type="datetime"
+								clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+							<#input id="expireTime" name="过期时间" underline="true" type="datetime"
+								clickFun="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" />
+                            <#input id="notEnoughCancelTime" name="过期保留时间（天）" underline="true"/>
+                            <#input id="shorturl" name="推广短链接" underline="true"/>
+                            <#input id="cashAmount" name="剩余金额" underline="true"/>
+                            <#input id="applyNum" name="总申请人数" underline="true"/>
+                            <#input id="chat" name="是否开启会员间聊天" underline="true"/>
+                            <#input id="pointsStatus" name="是否开启积分系统" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ClubInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ClubInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/club/club/club_info.js"></script>
+@}

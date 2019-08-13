@@ -1,0 +1,61 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="vipId" name="用户id" value="${item.vipId}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" underline="true"/>
+                            <#input id="title" name="卡名" value="${item.title}" underline="true"/>
+                            <#input id="cardTypeId" name="卡种类型ID" value="${item.cardTypeId}" underline="true"/>
+                            <#input id="cardTypeName" name="卡种类型名" value="${item.cardTypeName}" underline="true"/>
+                            <#input id="actualInsertTime" name="实际添加时间" value="${item.actualInsertTime}" underline="true"/>
+                            <#input id="openCardTime" name="开卡时间" value="${item.openCardTime}" underline="true"/>
+                            <#input id="startUseTime" name="开始使用时间" value="${item.startUseTime}" underline="true"/>
+                            <#input id="expireDays" name="有效期天数" value="${item.expireDays}" underline="true"/>
+                            <#input id="expireTime" name="到期时间" value="${item.expireTime}" underline="true"/>
+                            <#input id="insertTime" name="录入时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="suspendStartTime" name="请假开始时间" value="${item.suspendStartTime}" underline="true"/>
+                            <#input id="suspendEndTime" name="请假截止时间" value="${item.suspendEndTime}" underline="true"/>
+                            <#input id="actualMoney" name="实收金额" value="${item.actualMoney}" underline="true"/>
+                            <#input id="retainage" name="尾款金额" value="${item.retainage}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="autoOpenCardStatus" name="是否自动开卡" value="${item.autoOpenCardStatus}" underline="true"/>
+                            <#input id="balance" name="余额" value="${item.balance}" underline="true"/>
+                            <#input id="banksure" name="财务是否确认" value="${item.banksure}" underline="true"/>
+                            <#input id="contractNumber" name="合同编号" value="${item.contractNumber}" underline="true"/>
+                            <#input id="frontMoneyStatus" name="是否定金方式" value="${item.frontMoneyStatus}" underline="true"/>
+                            <#input id="isRenewCard" name="是否续卡" value="${item.isRenewCard}" underline="true"/>
+                            <#input id="isUnitedCard" name="是否通店卡" value="${item.isUnitedCard}" underline="true"/>
+                            <#input id="membershipId" name="会籍ID" value="${item.membershipId}" underline="true"/>
+                            <#input id="membershipName" name="会籍名称" value="${item.membershipName}" underline="true"/>
+                            <#input id="opeUserId" name="经办人用户ID" value="${item.opeUserId}" underline="true"/>
+                            <#input id="opeUsername" name="经办人用户名" value="${item.opeUsername}" underline="true"/>
+                            <#input id="payMethod" name="支付方式" value="${item.payMethod}" underline="true"/>
+                            <#input id="phone" name="手机号" value="${item.phone}" underline="true"/>
+                            <#input id="sourceId" name="客户来源id" value="${item.sourceId}" underline="true"/>
+                            <#input id="sourceName" name="客户来源名" value="${item.sourceName}" underline="true"/>
+                            <#input id="remark" name="备注" value="${item.remark}" underline="true"/>
+                            <#input id="port" name="端口 1 充值新卡 2 续费" value="${item.port}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CardTimecardInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CardTimecardInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/card/cardTimecard/cardTimecard_info.js"></script>
+@}

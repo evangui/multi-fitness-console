@@ -1,0 +1,36 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="主键" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" underline="true"/>
+                            <#input id="vipId" name="会员id" underline="true"/>
+                            <#input id="activityId" name="活动id" underline="true"/>
+                            <#input id="phone" name="用户手机号"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="realname" name="会员名" underline="true"/>
+                            <#input id="sign" name="是否签到入场" underline="true"/>
+                            <#input id="status" name="状态" underline="true"/>
+                            <#input id="insertTime" name="添加时间" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ActivityCourseSubscribeInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ActivityCourseSubscribeInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/activity/activityCourseSubscribe/activityCourseSubscribe_info.js"></script>
+@}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.SyllabusItemMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.SyllabusItem">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="group_id" property="groupId" />
+        <result column="schedule_setting_id" property="scheduleSettingId" />
+        <result column="day" property="day" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="has_subscribe" property="hasSubscribe" />
+        <result column="status" property="status" />
+        <result column="title" property="title" />
+        <result column="coach_id" property="coachId" />
+        <result column="coach_name" property="coachName" />
+        <result column="temporary_coach" property="temporaryCoach" />
+        <result column="insert_time" property="insertTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, group_id AS groupId, schedule_setting_id AS scheduleSettingId, day, start_time AS startTime, end_time AS endTime, has_subscribe AS hasSubscribe, status, title, coach_id AS coachId, coach_name AS coachName, temporary_coach AS temporaryCoach, insert_time AS insertTime
+    </sql>
+
+</mapper>

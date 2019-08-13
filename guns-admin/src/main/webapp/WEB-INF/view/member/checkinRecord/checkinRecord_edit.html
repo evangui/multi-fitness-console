@@ -1,0 +1,44 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal" id="defaultForm">
+
+            <input type="hidden" id="id" value="${item.id}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" value="${item.id}" underline="true"/>
+                            <#input id="clubId" name="俱乐部id" value="${item.clubId}" underline="true"/>
+                            <#input id="vipId" name="用户id" value="${item.vipId}" underline="true"/>
+                            <#input id="realname" name="姓名" value="${item.realname}" underline="true"/>
+                            <#input id="phone" name="手机号" value="${item.phone}" underline="true"/>
+                            <#input id="insertTime" name="录入时间" value="${item.insertTime}" underline="true"/>
+                            <#input id="lastCheckInTime" name="最近签到时间" value="${item.lastCheckInTime}" underline="true"/>
+                            <#input id="checkOutTime" name="签退时间" value="${item.checkOutTime}" underline="true"/>
+                            <#input id="admissionRecordCount" name="入场次数" value="${item.admissionRecordCount}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="opeUserId" name="代签用户ID" value="${item.opeUserId}" underline="true"/>
+                            <#input id="opeUsername" name="代签用户名" value="${item.opeUsername}" underline="true"/>
+                            <#input id="status" name="入场状态 3已入场  2已出场" value="${item.status}" underline="true"/>
+                            <#input id="remark" name="备注" value="${item.remark}" underline="true"/>
+                            <#input id="banksure" name="财务是否确认" value="${item.banksure}" underline="true"/>
+                            <#input id="bankRemark" name="财务备注" value="${item.bankRemark}" underline="true"/>
+                            <#input id="ringStatus" name="借出手环是否未还" value="${item.ringStatus}" underline="true"/>
+                            <#input id="port" name="消次端口 0默认 1前台电脑签到 2前台手机签到 3扫一扫签到 4指纹门禁签到 5智能门禁签到" value="${item.port}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="CheckinRecordInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="CheckinRecordInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/member/checkinRecord/checkinRecord_info.js"></script>
+@}

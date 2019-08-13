@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.PtrainRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.PtrainRecord">
+        <id column="id" property="id" />
+        <result column="club_id" property="clubId" />
+        <result column="vip_id" property="vipId" />
+        <result column="once_card_id" property="onceCardId" />
+        <result column="coach_id" property="coachId" />
+        <result column="membership_id" property="membershipId" />
+        <result column="reception_id" property="receptionId" />
+        <result column="reception_remark" property="receptionRemark" />
+        <result column="unit_price" property="unitPrice" />
+        <result column="costs" property="costs" />
+        <result column="type" property="type" />
+        <result column="syllabus_id" property="syllabusId" />
+        <result column="is_syllabus_sub" property="isSyllabusSub" />
+        <result column="user_phone" property="userPhone" />
+        <result column="insert_time" property="insertTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, club_id AS clubId, vip_id AS vipId, once_card_id AS onceCardId, coach_id AS coachId, membership_id AS membershipId, reception_id AS receptionId, reception_remark AS receptionRemark, unit_price AS unitPrice, costs, type, syllabus_id AS syllabusId, is_syllabus_sub AS isSyllabusSub, user_phone AS userPhone, insert_time AS insertTime
+    </sql>
+
+</mapper>
