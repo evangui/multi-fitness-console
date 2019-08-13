@@ -1,0 +1,13 @@
+{
+	"usingComponents": {
+    "i-alert": "../../../components/iview/alert/index",
+    "i-rate": "../../../components/iview/rate/index",
+    "i-cell-group": "../../../components/iview/cell-group/index",
+    "i-cell": "../../../components/iview/cell/index"
+ },
+  
+  "navigationBarTitleText": "私教消课",
+  
+  "enablePullDownRefresh": false
+}
+

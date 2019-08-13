@@ -1,0 +1,552 @@
+.stat-content{
+    margin: 0;
+    text-align: center;
+}
+.stat-content .item{
+    margin: 16rpx 0;
+    padding: 0 20rpx;
+		vertical-align:top;
+}
+.stat-content .item .num{
+	margin: 16rpx 0 4rpx;
+	font-size: 50rpx;
+}
+
+.icon-content{
+  margin: 16rpx 0;
+  text-align: center;
+  flex-wrap:wrap;
+  padding:26rpx 0 0;
+}
+
+.icon-content .item{
+	width:33.33%;
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+	vertical-align:top;
+}
+
+.icon-content .item .icon {
+	width:96rpx;
+	height:96rpx;
+}
+
+.icon-content .item .name {
+	font-size:25rpx;
+	height:48rpx;
+	line-height:48rpx;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	display:block;
+}
+
+view {
+	box-sizing: border-box;
+}
+.h1,
+.h2,
+.h3 {
+	line-height: 2;
+	font-weight: normal
+}
+
+.h1 {
+	font-size: 180rpx
+}
+
+.h2 {
+	font-size: 160rpx
+}
+
+.h3 {
+	font-size: 140rpx
+}
+
+
+.top-border:before {
+	content: " ";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 2rpx;
+	border-top: 2rpx solid #dedede;
+	color: #dedede;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5)
+}
+
+.bottom-border:after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2rpx;
+	border-bottom: 2rpx solid #dedede;
+	color: #dedede;
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5)
+}
+
+.header-webkit {
+	height: 358rpx;
+	background-color: #929292;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+	overflow: hidden;
+	position: relative
+}
+
+.header-webkit .pclub {
+	position: absolute;
+	top: 10rpx;
+	right: 10rpx;
+	color: #fff;
+	font-size: 30rpx
+}
+
+.header-webkit .club-logo {
+	background: #ccc;
+	border-radius: 8rpx;
+	border: 4rpx solid #fff;
+	width: 100rpx;
+	height: 100rpx;
+	box-sizing: border-box;
+	margin: 49rpx auto 0 auto
+}
+
+.header-webkit .club-logo image {
+	max-width: 100%;
+	width: 100%;
+	height: 100%
+}
+
+.header-webkit .club-name {
+	height: 44rpx;
+	line-height: 44rpx;
+	font-size: 34rpx;
+	color: #fff;
+	margin-top: 17rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.header-webkit .club-describe {
+	height: 31rpx;
+	line-height: 31rpx;
+	font-size: 22rpx;
+	color: #fff
+}
+
+.header-webkit .header-but {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 98rpx
+}
+
+.header-webkit .header-but .but-webkit {
+	font-size: 0;
+	line-height: 1
+}
+
+.header-webkit .header-but .but-webkit .icon {
+	max-width: 100%;
+	width: 60rpx;
+	height: 60rpx;
+	vertical-align: top;
+	margin: 19rpx 20rpx 0 0
+}
+
+.header-webkit .header-but .but-webkit .text {
+	font-size: 32rpx;
+	color: #fff;
+	height: 100%;
+	line-height: 98rpx;
+	display: inline-block
+}
+
+.header-webkit .header-but .but-webkit:active {
+	opacity: 0.6
+}
+
+.header-webkit .header-but .but-webkit:nth-child(1) {
+	position: relative
+}
+
+.header-webkit .header-but .but-webkit:nth-child(1):after {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 1rpx;
+	height: 80rpx;
+	right: 0;
+	top: 30rpx;
+	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	color: rgba(255, 255, 255, 0.3);
+	background: transparent;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scale(.5);
+	transform: scale(.5)
+}
+  
+.banner-two {
+	background: #fff
+}
+
+.banner-two .club-webkit {
+	min-height: 124rpx;
+	max-height: 300rpx;
+	border: 2rpx solid #efefef;
+	border-left: 0;
+	border-right: 0;
+	display:flex;
+	flex-direction: row;
+}
+
+.banner-two .club-webkit .club-logo-webkit {
+	width: 118rpx;
+	text-align: center;
+	line-height: 116rpx
+}
+
+.banner-two .club-webkit .club-logo-webkit image {
+	max-width: 100%;
+	width: 72rpx;
+	height: 72rpx;
+	border: 2rpx solid #dadada;
+	border-radius: 5rpx
+}
+
+.banner-two .club-webkit .club-name {
+	height: 50rpx;
+	line-height: 50rpx;
+	font-size: 34rpx;
+	color: #000;
+	margin-top: 19rpx;
+	padding-right: 20rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.banner-two .club-webkit .club-describe {
+	font-size: 22rpx;
+	color: #7e7e7e;
+	padding-right: 20rpx;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+	overflow: hidden
+}
+
+.banner-two .club-webkit .pclub-webkit {
+	max-width: 150rpx;
+	width: 150rpx;
+	text-align: center;
+	line-height: 124rpx;
+	font-size: 30rpx;
+	color: #2da2f5;
+	border-left: 1rpx solid #efefef
+}
+
+.banner-two .two-header-but-webkit {
+	height: 92rpx;
+	border-bottom: 2rpx solid #efefef;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: center;
+}
+
+.banner-two .two-header-but-webkit .but-webkit {
+	font-size: 0;
+	line-height: 1;
+	text-align: center;
+	width:50%;
+}
+
+.banner-two .two-header-but-webkit .but-webkit .icon {
+	max-width: 100%;
+	width: 50rpx;
+	height: 50rpx;
+	vertical-align: top;
+	margin: 20rpx 20rpx 0 0
+}
+
+.banner-two .two-header-but-webkit .but-webkit .text {
+	font-size: 32rpx;
+	color: #000;
+	height: 100%;
+	line-height: 94rpx;
+	display: inline-block
+}
+
+.banner-two .two-header-but-webkit .but-webkit:active {
+	opacity: 0.6
+}
+
+.banner-two .two-header-but-webkit .but-webkit:nth-child(1) {
+	border-right: 2rpx solid #efefef
+}
+
+.article-webkit-two {
+	border: 2rpx solid #efefef;
+	border-left: 0;
+	border-right: 0;
+	margin: 12rpx auto;
+	background: #fff;
+	padding-top: 30rpx
+}
+
+.club-dz-webkit {
+	height: 104rpx;
+	border: 2rpx solid #efefef;
+	border-left: 0;
+	border-right: 0;
+	background: #fff;
+	color: #878787;
+	margin-bottom: 12rpx
+}
+
+.club-dz-webkit .bottom {
+	color: #878787;
+	font-size: 26rpx;
+	line-height: 56rpx
+}
+
+.club-dz-webkit .icon-webkit {
+	text-align: center;
+	line-height: 52rpx;
+	width: 60rpx
+}
+
+.club-dz-webkit .icon-webkit image {
+	max-width: 100%;
+	width: 25rpx;
+	height: 25rpx;
+}
+
+.club-dz-webkit .text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-right: 20rpx
+}
+
+.arrow-navigation {
+	display: none
+}
+
+.flickerplate .dot-navigation .dot {
+	width: 14rpx;
+	height: 14rpx;
+	margin: 0 4rpx
+}
+
+.pup-eqr-webkit {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: 200;
+	text-align: center;
+	margin: 0 auto;
+	display: none
+}
+
+.pup-eqr-webkit .pup-eqr {
+	width: 6*100rpx;
+	height: 7.4*100rpx;
+	background: #fff;
+	position: relative;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: -3.7*100rpx auto 0 auto;
+	border-radius: 0.2*100rpx
+}
+
+.pup-eqr-webkit .pup-eqr .top .title {
+	font-size: 44*rpx;
+	color: #333;
+	line-height: 1;
+	margin-top: 42rpx;
+	margin-bottom: 18rpx
+}
+
+.pup-eqr-webkit .pup-eqr .top .explain {
+	font-size: 28rpx;
+	color: #808080;
+	line-height: 1;
+	margin-bottom: 24rpx
+}
+
+.pup-eqr-webkit .pup-eqr .top .explains {
+	text-align: left;
+	margin-left: 50rpx;
+	font-size: 30rpx
+}
+
+.pup-eqr-webkit .pup-eqr .top hr {
+	border: 0;
+	border-top: 2rpx solid #dedede;
+	margin: auto;
+	margin-top: 40rpx
+}
+
+.pup-eqr-webkit .pup-eqr .top .userQrcode-cnvent {
+	margin-top: 0.5*100rpx;
+	margin-bottom: 0.3*100rpx
+}
+
+.pup-eqr-webkit .pup-eqr .top .userQrcode-cnvent image {
+	max-width: 100%;
+	width: 4.5*100rpx;
+	height: 4.5*100rpx;
+	overflow: hidden
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but {
+	height: 1*100rpx;
+	position: relative;
+	background: #f7f7f7
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but:before {
+	content: " ";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1px;
+	border-top: 1px solid #dedede;
+	color: #dedede;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5)
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but navigator {
+	position: relative;
+	color: #808080;
+	font-size: 0.24*100rpx;
+	line-height: 1.1*100rpx
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but navigator:before {
+	content: " ";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	border-right: 1px solid #dedede;
+	color: #dedede;
+	-webkit-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+	-webkit-transform: scaleX(.5);
+	transform: scaleX(.5)
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but navigator:active {
+	background: #ebebeb
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but navigator image {
+	max-width: 100%;
+	width: 0.44*100rpx;
+	height: 0.44*100rpx;
+	position: relative;
+	top: -0.04*100rpx;
+	margin-left: 0.03*100rpx
+}
+
+.pup-eqr-webkit .pup-eqr .bottom-but .switch-club:before {
+	display: none
+}
+
+.pup-circle-webkit {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	margin: 0 auto;
+	display: none
+}
+
+.pup-circle-webkit .pup-center {
+	width: 5.98*100rpx;
+	height: 7.44*100rpx;
+	border-radius: 0.2*100rpx;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	margin: -3.72*100rpx auto 0 auto;
+	text-align: center
+}
+
+.pup-circle-webkit .pup-center .clod {
+	width: 0.73*100rpx;
+	height: 0.78*100rpx;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: transparent url("/assets/web/mobile/wechat/club/images/clob.png") no-repeat center center;
+	background-size: 0.3*100rpx .3*100rpx
+}
+
+.pup-circle-webkit .pup-center .img {
+	max-width: 100%;
+	width: 4.9*100rpx;
+	height: auto;
+	margin-top: 0.46*100rpx
+}
+
+.pup-circle-webkit .pup-center .title {
+	height: 0.5*100rpx;
+	line-height: 0.52*100rpx;
+	font-size: 0.36*100rpx;
+	color: #515b66;
+	margin-top: 0.76*100rpx
+}
+
+.pup-circle-webkit .pup-center .text {
+	height: 0.44*100rpx;
+	line-height: 0.46*100rpx;
+	font-size: 0.3*100rpx;
+	color: #72757e
+}
+
+.pup-circle-webkit .pup-center .but-style {
+	width: 5.06*100rpx;
+	height: 0.88*100rpx;
+	line-height: 0.9*100rpx;
+	text-align: center;
+	background: #60c367;
+	border-radius: 0.44*100rpx;
+	margin: 0.48*100rpx auto 0 auto;
+	font-size: 0.3*100rpx;
+	color: #fff;
+	display: inline-block
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>WeUI</title>
+		<link rel="stylesheet" type="text/css" href="app.css" />
+		<style type="text/css">
+			.timeline-left_item {
+				margin-top: -12px;
+			}
+			
+			.timeline-right_item {
+				text-align: left;
+				border-top: solid 1px #d9d9d9;
+				margin: 0 10px;
+				height: 1.6em;
+			}
+			
+			.border-no {
+				border: solid 0 #ffffff;
+			}
+			
+			.bordertop-red {
+				border-top: solid 1px #ff3b30;
+			}
+			
+			.bordertop-halfhour {
+				text-align: left;
+				border-top: solid 1px #eeefef;
+				margin: 0 10px;
+				height: 1.6em;
+			}
+			
+			.timeline-content-bespeak {
+				margin: 3px;
+				padding: 3px 15px;
+				text-align: left;
+				background-color: #d0d0d0;
+				font-size: 16px;
+				line-height: 22px;
+				height: 1em;
+				color: #ffffff;
+				border-radius: 3px;
+			}
+			
+			.timeline-content {
+				margin: 3px;
+				padding: 3px 15px;
+				text-align: left;
+				background-color: #d0d0d0;
+				font-size: 16px;
+				line-height: 22px;
+				color: #ffffff;
+				border-radius: 3px;
+			}
+			
+			.timeline-content-item2 {
+				height: 2.4em;
+			}
+			.timeline-content-item3 {
+				height: 4.1em;
+			}
+			.timeline-content-item4 {
+				height: 5.8em;
+			}
+			.timeline-content-item5 {
+				height: 7.5em;
+			}
+			.timeline-content-item5 {
+				height: 9.0em;
+			}
+			.timeline-content-item6 {
+				height: 10.5em;
+			}
+			/*当前预约状态，0正常 1未确认 2已确认 3学员已取消 4 教练已取消',*/
+			.timeline-content-status1 {
+				background-color: #ff9500!important;
+			}
+			.timeline-content-status2 {
+				background-color: #69b076!important
+			}
+			.timeline-content-status3 {
+				background-color: #d0d0d0;
+			}
+			.timeline-content-status4 {
+				background-color: #d0d0d0;
+			}
+			
+			
+			.color-white {
+				color: #ffffff;
+			}
+			
+			.dayline {
+				padding:15px;display: flex;flex-direction:column;border-bottom: solid 1px #e5e5e5;
+				text-align: center;
+			}
+			.dayline-tip1{
+				font-size: 18px;
+				font-weight: 600;
+			}
+			.dayline-tip2{
+				font-size: 14px;
+				font-weight: 400;
+			}
+		</style>
+	</head>
+
+	<body>
+		<page>
+			<div class="page">
+				<div class="weui-panel__bd bg-color-white">
+						<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+							<div class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+								<image style="border-radius: 5px;" class="weui-media-box__thumb" src="https://upyun.newugo.cn/assets/admin/images/default_avatar.png!100" />
+							</div>
+							<div class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+								<div class="weui-media-box__title" style="color: #03A9F4;font-size:18px;font-weight: 600;">桂亚军</div>
+								<div class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</div>
+							</div>
+							<div class="">
+								<image style="width: 25px;height: 25px;padding: 6px;" src="http://m.cattlepie.com/img/detail/dianhua.png"></image>
+							</div>
+						</navigator>
+					</div>
+					
+				<div class="page__bd"  style="border-top: solid 1px #e5e5e5;">
+					
+					<div class="weui-flex bg-color-white">
+						<div class="bg-color-white-smoke" style="border-right: solid 1px #e5e5e5;">
+
+							<div class="bg-color-white dayline">
+								<div class="dayline-tip1 text-color-orange">明天</div>
+								<div class="dayline-tip2 text-color-orange">周一</div>
+							</div>
+							<div class="dayline">
+								<div class="dayline-tip1 font-gray-content">明天</div>
+								<div class="dayline-tip2 font-gray-extra">周一</div>
+							</div>
+							<div class="dayline">
+								<div class="dayline-tip1 font-gray-content">明天</div>
+								<div class="dayline-tip2 font-gray-extra">周一</div>
+							</div>
+							<div class="dayline">
+								<div class="dayline-tip1 font-gray-content">明天</div>
+								<div class="dayline-tip2 font-gray-extra">周一</div>
+							</div>
+		 
+						</div>
+						<div class="weui-flex__item" style="padding: 20px 0 0 6px;">
+
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra">12:00</div>
+								<div class="timeline-right_item weui-flex__item">
+								</div>
+							</div>
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra color-white">12:30</div>
+								<div class="timeline-right_item bordertop-halfhour weui-flex__item">
+									<div class="timeline-content timeline-content-item5">
+										桂亚军
+										<div style="font-size: 12px;line-height: 14px;">
+											12:30-13:30 已结束
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra">13:00</div>
+								<div class="timeline-right_item weui-flex__item border-no">
+								</div>
+							</div>
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra color-white">13:30</div>
+								<div class="timeline-right_item bordertop-halfhour weui-flex__item">
+								</div>
+							</div>
+
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra">14:00</div>
+								<div class="timeline-right_item weui-flex__item">
+								</div>
+							</div>
+
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra color-white">14:30</div>
+								<div class="timeline-right_item bordertop-halfhour weui-flex__item">
+									<div class="timeline-content timeline-content-status1">
+										桂亚军
+										<div style="font-size: 12px;line-height: 14px;">
+											12:30-13:30 已接受
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra">15:00</div>
+								<div class="timeline-right_item weui-flex__item border-no">
+								</div>
+							</div>
+
+							<div class="weui-flex">
+								<div class="timeline-left_item font-gray-extra color-white">15:30</div>
+								<div class="timeline-right_item bordertop-halfhour weui-flex__item">
+									<div class="timeline-content timeline-content-status2 weui-flex">
+										<div>
+											<img src="../images/default_avatar.png" style="width: 32px;height: 32px;margin:2px 5px 0 0;border-radius: 3px;"/>
+										</div>
+										<div class="weui-flex__item">
+											<div>桂亚军</div>
+											<div style="font-size: 12px;line-height: 14px;">
+												12:30-13:30 已接受2
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra">16:00</div>
+								<div class="timeline-right_item weui-flex__item border-no">
+								</div>
+							</div>
+
+							<div class="weui-flex ">
+								<div class="timeline-left_item font-gray-extra color-white">16:30</div>
+								<div class="timeline-right_item bordertop-halfhour weui-flex__item">
+								</div>
+							</div>
+							<div class="weui-flex ">
+								<div class="timeline-left_item text-color-red ">17:00</div>
+								<div class="timeline-right_item bordertop-red weui-flex__item">
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</page>
+
+	</body>
+
+</html>

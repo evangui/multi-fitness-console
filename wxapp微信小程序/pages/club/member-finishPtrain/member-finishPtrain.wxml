@@ -1,0 +1,57 @@
+<!--pages/club/checkin/checkin.wxml-->
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+
+<view class="page">
+	<i-alert wx:if="{{!ptrainFinished}}" show-icon type="info" closable bind:close="handleClick">
+		消课中...
+	</i-alert>
+	<i-alert wx:elif="{{!checkSuccess}}" show-icon type="warning" closable bind:close="handleClick">
+		{{checkMessage}}
+	</i-alert>
+	<i-alert wx:elif="{{checkSuccess}}" show-icon type="success" closable bind:close="handleClick">
+		消课成功！
+	</i-alert>
+	<view class="weui-panel__bd bg-color-white">
+		<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+			<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+				<image style="border-radius: 5px;" class="weui-media-box__thumb" src="{{coachInfo.avatar || '/images/default_avatar.png'}}" />
+			</view>
+			<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+				<view class="weui-media-box__title" style="color: #03A9F4;font-size:18px;font-weight: 600;">
+					{{coachInfo.realname}}
+				</view>
+				<view class="weui-media-box__desc">
+					<block wx-if="{{coachInfo.goodAt}}"> 擅长：{{coachInfo.goodAt}} </block>
+					<block wx-if="{{coachInfo.desc}}"> - {{coachInfo.desc}}</block>
+				</view>
+			</view>
+			<view bindtap="callCoach">
+				<image style="width: 25px;height: 25px;padding: 6px;" src="http://m.cattlepie.com/img/detail/dianhua.png"></image>
+			</view>
+		</navigator>
+
+	</view>
+
+	<view wx:if="{{checkSuccess}}" class="page__bd bg-color-white" style="margin-top:10px;padding: 10px;">
+		<i-cell title="本次课程评分">
+			<i-rate bind:change="onChange5" count="{{5}}" value="{{starIndex5}}">
+				{{starIndex5}}分
+			</i-rate>
+		</i-cell>
+
+		<view style="padding-left:10px;">本次课程评价</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<textarea bindinput="bindInputComment" name="comment" value="{{comment}}" class="weui-textarea" placeholder="请填写您对本次私教课程的感受! 请畅所欲言,尽情放纵,海阔天空任尔语言飞翔" style="height: 6.3em" />
+					<view class="weui-textarea-counter" style="font-size: 14px;">{{commentLen}}/300</view>
+				</view>
+			</view>
+		</view>
+		<block wx-if="{{!commentSuccess}}">
+			<button bindtap="sendComment" class="weui-btn bg-color-orange">发表私教感受</button>
+	    <button bindtap="redirectToClub" class="weui-btn" type="default">暂不评价</button>
+    </block>
+	</view>
+
+</view>

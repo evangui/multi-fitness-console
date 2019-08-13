@@ -1,0 +1,54 @@
+<view class="webkit-center qualification body">
+	<form bindsubmit="formSubmit" report-submit >
+  <view class="header">
+    <view class="header-webkit">
+    	<button class="noborder-btn" form-type="submit">
+      <view class="header-club-webkit">
+        <image class="club-logo" src="{{'/images/logo.png'}}" />
+        <view class="club-name" wx:if="{{refer === 'door'}}">登录以开门</view>
+        <view class="club-name" wx:elif="{{refer === 'onlineCard'}}" >登录以继续购卡</view>
+        <view class="club-name" wx:elif="{{refer === 'locker'}}" >登录以继续租柜</view>
+        <view class="club-name" wx:elif="{{refer === 'runing'}}" >登录以继续跑步</view>
+        <view class="club-name" wx:elif="{{refer === 'store'}}" >登录以进入商城</view>
+        <view class="club-name h2" wx:else>加入俱乐部</view>
+      </view>
+     </button>
+    </view>
+  </view>
+  <view>
+    <view class="article-webkit">
+      <!-- 输入框 -->
+      <view class="form-webkit">
+        <view class="is-Gip">
+          <view class="input-webkit">
+          	<button class="noborder-btn" form-type="submit">
+            	<input type="digit" name="phone" value="{{phone}}" bindinput="bindInputPhone" placeholder="请输入手机号"></input>
+         		</button>
+          </view>
+          <view class="input-webkit">
+            	<input type="digit" name="code" value="{{code}}" bindinput="bindInputCode" placeholder="请输入验证码" style="width: 60%;"></input>
+	            <view wx:if="{{isCode}}" class="code-but" bind:tap="bindCodeBut">{{codeButText}}</view>
+	            <view wx:else class="code-but-disable" bind:tap="bindCodeBut">{{codeButText}}</view>
+          </view>
+        </view>
+        <button class="login-but" wx:if="{{canIUse}}" open-type="getUserInfo" 
+        	form-type="submit" bindgetuserinfo="bindLoginBut"> 登录 </button>
+        
+        <view class="xx-foelg">
+          <view class="border">
+            <text class="text">登录并认证为会员，可获得以下权益</text>
+          </view>
+        </view>
+      </view>
+      <!-- END输入框 -->
+      <image class="footer-img" mode="widthFix" src="/images/wxQualification.png" />
+    </view>
+  </view>
+  <view>
+    <view class="footer-webkit">
+
+    </view>
+  </view>
+  
+  </form>
+</view>

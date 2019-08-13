@@ -1,0 +1,16 @@
+{
+	"usingComponents": {
+    "i-tag": "../../../components/iview/tag/index"
+ 	},
+ 
+	"backgroundColor": "#4F4B5F",
+	"backgroundTextStyle":"light",
+	
+  "navigationBarTitleText": "学员列表",
+  "navigationBarTextStyle":"white",
+  "navigationBarBackgroundColor": "#4F4B5F",
+  
+  "enablePullDownRefresh": false
+}
+
+

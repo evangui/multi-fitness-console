@@ -1,0 +1,54 @@
+<view class="page">
+	<view class="header banner-two">
+		<view class="banner-webkit">
+			<swiper style="height:420rpx;" indicator-dots="true" indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="#fff" autoplay="true" interval="5000" duration="1000">
+				<swiper-item>
+					<navigator url="">
+						<image class="slide-img" src="http://static.xxkuaipao.com/www/images/big-background-training.563401d8.jpg" mode="aspectFill" lazy-load="true" />
+					</navigator>
+				</swiper-item>
+				<swiper-item>
+					<navigator url="">
+						<image class="slide-img" src="http://static.xxkuaipao.com/www/images/big-background-app.660508ce.jpg" mode="aspectFill" lazy-load="true" />
+					</navigator>
+				</swiper-item>
+				<swiper-item>
+					<navigator url="">
+						<image class="slide-img" src="http://static.xxkuaipao.com/www/images/big-background-gym.5ed42763.jpg" mode="aspectFill" lazy-load="true" />
+					</navigator>
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+
+	<view class="page__bd">
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd font-gray-title">杏运树优选</view>
+			<view class="weui-panel__bd">
+
+				<scroll-view scroll-y="true"  bindscrolltolower="loadMore">
+					<block wx:for="{{itemList}}" wx:for-item="item" wx:key="id">
+						<navigator url="/pages/club/home/home?clubId={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+							<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+								<image class="weui-media-box__thumb" src="{{item.logo}}" />
+							</view>
+							
+							<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+								<view class="weui-media-box__title">{{item.name}}</view>
+								<view class="weui-media-box__desc">{{item.desc}} {{item.clubAddress}}</view>
+								<view class="weui-media-box__info">
+                    <view class="weui-media-box__info__meta">{{item.clubStyleName}}</view>
+                    <view class="weui-media-box__info__meta">{{item.clubPhone}}</view>
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.abbreviate}}</view>
+                </view>
+							</view>
+						</navigator>
+					</block>
+					<view wx:if="{{!allowInfinite}}" class="dropload-load preloader infinite-scroll-preloader"><text class="loading"></text>加载中-请等待...</view>
+					<view wx:if="{{showListBottom}}" class="bottom-tip font-gray-extra" style="text-align: center;padding:10px;">机智如你，我就是卧底</view>
+				</scroll-view>
+			</view>
+		</view>
+
+	</view>
+</view>

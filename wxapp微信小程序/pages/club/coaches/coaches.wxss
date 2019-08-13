@@ -1,0 +1,403 @@
+.coaches {
+	background: #fff
+}
+
+.top-club-webkit {
+	height: 88rpx;
+	position: relative;
+	background: #fff;
+	display: none
+}
+
+.top-club-webkit:before {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 200%;
+	height: 1px;
+	left: 0;
+	bottom: 0;
+	border-bottom: 1px solid #dedede;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scale(.5);
+	transform: scale(.5)
+}
+
+.top-club-webkit .club-block-webkit {
+	padding-right: 20rpx;
+	height: 100%
+}
+
+.top-club-webkit .club-block-webkit .icon-webkit {
+	width: 103rpx;
+	text-align: center
+}
+
+.top-club-webkit .club-block-webkit .icon-webkit image {
+	max-width: 100%;
+	width: 58rpx;
+	height: 58rpx;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 4rpx;
+	overflow: hidden;
+	margin-top: 14rpx
+}
+
+.top-club-webkit .club-block-webkit .index-but {
+	line-height: 91rpx;
+	font-size: 26rpx;
+	color: #1b91f8
+}
+
+.top-club-webkit .club-block-webkit .index-but image {
+	max-width: 100%;
+	width: 16rpx;
+	height: 25rpx;
+	position: relative;
+	top: -0.04rem;
+	margin-left: 10rpx
+}
+
+.top-club-webkit .club-block-webkit .club-name {
+	font-size: 32rpx;
+	color: #4d4d4d;
+	line-height: 91rpx;
+  text-align:left;
+}
+
+.top-switch-webkit {
+	height: auto;
+	background: #fff;
+	text-align: center;
+	position: relative;
+	line-height: 1
+}
+
+.top-switch-webkit:before {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 200%;
+	height: 1px;
+	left: 0;
+	bottom: -1px;
+	border-bottom: 1px solid #dedede;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scale(.5);
+	transform: scale(.5)
+}
+
+.top-switch-webkit .type-switch-but {
+	display: inline-block;
+	height: 89rpx;
+	font-size: 30rpx;
+	color: #808080;
+	border-bottom: 2px solid transparent;
+	line-height: 89rpx
+}
+
+.top-switch-webkit .active {
+	color: #33a0ff;
+	border-bottom: 2px solid #33a0ff;
+	position: relative;
+	z-index: 100
+}
+
+.article-webkit {
+	padding-left: 30rpx
+}
+
+.coaches-header-webkit {
+	height: auto;
+	background: #fffaea;
+	position: relative;
+	font-size: 30rpx;
+	color: #9d8f7b;
+	line-height: 1.2;
+	text-align: justify;
+	padding: 30rpx
+}
+
+.coaches-header-webkit:after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #e9e1ca;
+	color: #e9e1ca;
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5)
+}
+
+.coaches-list-ul {
+	display: inline-block;
+	width: 100%
+}
+
+.coaches-list-ul .coaches-list {
+	height: 170rpx
+}
+
+.coaches-list-ul .list-icon {
+	width: 168rpx;
+	text-align: left;
+	line-height: 170rpx
+}
+
+.coaches-list-ul .list-icon image {
+	max-width: 100%;
+	height: 140rpx;
+	width: 140rpx;
+	border-radius: 12rpx
+}
+
+.coaches-list-ul .list-nr {
+	position: relative;
+	padding-right: 30rpx
+}
+
+.coaches-list-ul .list-nr:after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #e2e2e2;
+	color: #e2e2e2;
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5)
+}
+
+.coaches-list-ul .list-nr .top {
+	height: 114rpx
+}
+
+.coaches-list-ul .list-nr .top .button {
+	width: 92rpx
+}
+
+.coaches-list-ul .list-nr .top .button view {
+	height: 50rpx;
+	line-height: 50rpx;
+	width: 100%;
+	text-align: center;
+	color: #33a0ff;
+	font-size: 26rpx;
+	border: 1px solid #43a4fb;
+	border-radius: 8rpx;
+	margin-top: 56rpx;
+	display: inline-block
+}
+
+.coaches-list-ul .list-nr .top .sm-top {
+	padding-top: 34rpx
+}
+
+.coaches-list-ul .list-nr .top .sm-top .name {
+	height: 42rpx;
+	font-size: 36rpx;
+	color: #4c4c4c;
+	line-height: 1;
+	border-left: 6rpx solid #b3b3b3;
+	text-indent: 8rpx;
+	padding-top: 4rpx;
+	vertical-align: top
+}
+
+.coaches-list-ul .list-nr .top .sm-top .gender-icon {
+	height: 34rpx;
+	text-align: left;
+	line-height: 1;
+	text-indent: 4rpx
+}
+
+.coaches-list-ul .list-nr .top .sm-top .gender-icon image {
+	max-width: 100%;
+	width: 34rpx;
+	height: 34rpx;
+	vertical-align: top
+}
+
+.coaches-list-ul .list-nr .bottom-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 26rpx;
+	color: #808080
+}
+
+.pup-webkit-fixed {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.38);
+	text-align: center
+}
+
+.pup-webkit-fixed .pup-webkit {
+	width: 525rpx;
+	height: 785rpx;
+	display: inline-block;
+	background: #fff;
+	border-radius: 8rpx;
+	overflow: hidden;
+	position: relative;
+	top: 50%;
+	margin-top: -3.92rem
+}
+
+.pup-webkit-fixed .bg {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	margin-top: 30rpx
+}
+
+.pup-webkit-fixed .text {
+	font-size: 30rpx;
+	color: #808080;
+	line-height: 1;
+	margin-top: 35rpx
+}
+
+.pup-webkit-fixed .button {
+	display: inline-block;
+	width: 192rpx;
+	height: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	font-size: 30rpx;
+	color: #fff;
+	background: #92d0fd;
+	border-radius: 4rpx;
+	margin-top: 24rpx
+}
+
+.list-record-webkit {
+	margin-left: -0.3rem
+}
+
+.list-record-webkit .record-list {
+	display: inline-block;
+	line-height: 1;
+	width: 100%;
+	float: none;
+	clear: both;
+	padding: 0 20rpx 28rpx 20rpx;
+	position: relative;
+  text-align: left;
+}
+
+.list-record-webkit .record-list:before {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+	width: 200%;
+	height: 1px;
+	left: 0;
+	bottom: 0;
+	border-bottom: 1px solid #dedede;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scale(.5);
+	transform: scale(.5)
+}
+
+.list-record-webkit .time {
+	font-size: 28rpx;
+	color: #b3b3b3;
+	line-height: 1;
+	margin-top: 30rpx
+}
+
+.list-record-webkit .center-rl {
+	margin-top: 9rpx
+}
+
+.list-record-webkit .center-rl .name {
+	font-size: 34rpx;
+	color: #2c2c2c;
+	padding-right: 22rpx;
+	height: 100%
+}
+
+.list-record-webkit .center-rl .start-time {
+	font-size: 28rpx;
+	color: #808080;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 100%
+}
+
+.list-record-webkit .result {
+	font-size: 24rpx;
+	margin-top: 14rpx
+}
+
+.list-record-webkit .wait {
+	color: #33a0ff
+}
+
+.list-record-webkit .have-acknowledged {
+	color: #50cd6d
+}
+
+.list-record-webkit .cancel {
+	color: #b3b3b3
+}
+
+.footer-webkit .download-fixed-webkit {
+	height: 80rpx;
+	background: #333;
+	margin: 0 auto
+}
+
+.footer-webkit .download-webkit {
+	height: 80rpx
+}
+
+.footer-webkit .download-webkit .icon-webkit {
+	width: 82rpx;
+	text-align: left;
+	line-height: 80rpx;
+	text-indent: 30rpx
+}
+
+.footer-webkit .download-webkit .icon-webkit image {
+	max-width: 100%;
+	height: auto;
+	width: 37rpx
+}
+
+.footer-webkit .download-webkit .text {
+	font-size: 26rpx;
+	color: rgba(255, 255, 255, 0.6);
+	text-align: left;
+	line-height: 86rpx
+}
+
+.footer-webkit .download-webkit .download-icon {
+	width: 68rpx;
+	text-align: left;
+	line-height: 80rpx
+}
+
+.footer-webkit .download-webkit .download-icon image {
+	max-width: 100%;
+	height: auto;
+	width: 38rpx
+}

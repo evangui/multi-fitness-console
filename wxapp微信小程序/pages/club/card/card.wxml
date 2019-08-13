@@ -1,0 +1,228 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+
+<view class="qrcode-webpack">
+	<view>
+		<view class="header-top">
+			<view class="head-portrait" style="display:flex;align-items:center;justify-content:center;">
+				<image src="{{vipInfo.avatar || basic.avatar(vipInfo.userId) }}" />
+			</view>
+			<view class="est-webkit" style="width:50%;">
+				<view class="name h2">{{vipInfo.realname}}</view>
+				<view class="text">手机号: {{vipInfo.phone}}</view>
+				<view class="text">会员卡: {{vipInfo.cardNumber}}</view>
+			</view>
+			<view class="integral-webkit flex-center flex-box1" >
+				<!--<navigator url="/app/page/wechatNew/points/index/333333" class="integral">
+					<text class="p">30</text>
+				</navigator>-->
+			</view>
+		</view>
+		<view class="qrcode-rqe-webkit">
+			<view class="title h2">您在 fff 的专属条形码</view>
+			<image mode="aspectFit" style="width:480rpx;height:154rpx;" src="data:image/png;base64,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" />
+			<view class="exit-text exit-text2">{{vipInfo.cardNumber}} </view>
+		</view>
+		<view class="header-bottom-webkit" style="display:flex;flex-direction:row;justify-content: space-around;">
+			<view class="display">
+				<navigator url="/pages/club/member-recharge-log/member-recharge-log?clubId={{clubId}}" class="block">
+					<image src="http://fitimg.yunimg.cn/dev/post/147073510113925.png!100" />
+					<view class="p">充值记录</view>
+				</navigator>
+			</view>
+			<view class="display">
+				<navigator url="/pages/club/member-spend-log/member-spend-log?clubId={{clubId}}" class="block">
+					<image src="http://fitimg.yunimg.cn/dev/post/147073516126671.png!100" />
+					<view class="p">消费记录</view>
+				</navigator>
+			</view>
+			<view class="display">
+				<navigator url="/pages/club/member-checkin-record/member-checkin-record?clubId={{clubId}}" class="block">
+					<image class="icon" src="http://fitimg.yunimg.cn/dev/post/147073513275362.png!100" />
+					<view class="p">签到记录</view>
+				</navigator>
+			</view>
+			
+			<view class="display">
+				<navigator url="/pages/club/member-bespeak-record/member-bespeak-record?clubId={{clubId}}">
+					<image class="icon" src="https://xysmch.whbws.cn/assets/panel/images/bespeak_record.jpg" />
+					<view class="p">预约记录</view>
+				</navigator>
+			</view>
+			<!--<view class="display">
+				<navigator url="https://app.newugo.cn/app/page/wechat/physicalRecord/physicalRecord">
+					<image src="http://fitimg.yunimg.cn/dev/club/vipuser/avatar/201612/148187696776811.png!100" />
+					<view class="p">体测记录</view>
+				</navigator>
+			</view>-->
+		</view>
+	</view>
+
+	<view>
+		<view class="article-webkit">
+			<view class="list-ul club-kp-webkit">
+				
+				<view wx:if="{{!cardList}}">
+					<view class="dropload-down">
+						<view class="dropload-load"><text class="loading"></text>加载中-请等待...</view>
+					</view>
+				</view>
+	
+				<view wx:elif="{{cardList.length === 0}}">
+					<view class="no-content">暂未开卡</view>
+				</view>
+	
+				<block wx:elif="{{cardList.length > 0}}">
+					<view wx:for="{{cardList}}" wx:for-item="item" wx:key="id" class="list-li timecardinfo flex-top">
+						<!--时间卡-->
+						<block wx:if="{{item.type=='multiTimeCard'}}">
+							<view class="top flex-right flex-box1">
+								<view class="right"><span flex-box="1" class="teSpan">{{basic.getCardTypeStr(item.type) }}</span></view>
+								<view class="left flex-box1">
+									<view class="title h2">{{item.title}}</view>
+									<view class="due-time">开卡时间：{{item.openTime}}</view>
+									<view wx:if="item.expireTime>946656000" class="due-time">到期时间：{{basic.dateFormat(item.expireTime) }}</view>
+								</view>
+							</view>
+							<view wx:if="{{item.status != 10}}" class="bottom flex-left flex-box0">
+								<view class="number">{{item.statusStr}}</view>
+								<view class="but"></view>
+							</view>
+							<view wx:else class="bottom flex-left flex-box0">
+								<view class="number">{{ basic.distanceDay(item.expireTime) }}天</view>
+								<view class="units">剩余</view>
+								<view class="but"></view>
+							</view>
+						</block>
+						<!--私教卡，次卡-->
+						<block wx:elif="{{item.type=='personalTrainerCard' || item.type=='onceCard'}}">
+							<view class="top flex-right flex-box1">
+								<view class="right"><span flex-box="1" class="teSpan">{{basic.getCardTypeStr(item.type) }}</span></view>
+								<view class="left flex-box1">
+									<view class="title h2">{{item.title}}</view>
+									<view class="due-time">总次数：{{item.counts}}</view>
+									<view class="due-time">开卡时间：{{item.openTime}}</view>
+									<view wx:if="item.expireTime>946656000" class="due-time">到期时间：{{basic.dateFormat(item.expireTime, '永久有效') }}</view>
+								</view>
+							</view>
+							<view class="bottom flex-left flex-box0">
+								<view class="number">{{item.leftCounts}}次</view>
+								<view class="units">剩余</view>
+								<view class="but"></view>
+							</view>
+						</block>
+						<!--储值卡-->
+						<block wx:elif="{{item.type=='storeCard'}}">
+							<view class="top flex-right flex-box1">
+								<view class="right"><span flex-box="1" class="teSpan">{{basic.getCardTypeStr(item.type) }}</span></view>
+								<view class="left flex-box1">
+									<view class="title h2">{{item.title}}</view>
+									<view class="due-time">储值总额：{{item.counts}}</view>
+									<view class="due-time">开卡时间：{{item.openTime}}</view>
+									<view wx:if="item.expireTime>946656000" class="due-time">到期时间：{{basic.dateFormat(item.expireTime) }}</view>
+								</view>
+							</view>
+							<view class="bottom flex-left flex-box0">
+								<view class="number">{{item.leftCounts}}元</view>
+								<view class="units">剩余</view>
+								<view class="but"></view>
+							</view>
+						</block>
+						
+					</view>
+				</block>
+				
+			</view>
+		</view>
+	</view>
+	<view class="vux-x-dialog dialog-demo">
+		<view class="weui-mask" style="display: none;"></view>
+		<view class="weui-dialog" style="display: none;">
+			<view class="dialog-title">分享给微信好友</view>
+			<view class="dialog-box">
+				<view>
+					<view class="weui-cells__title">输入分享人数:</view>
+					<view class="weui-cells">
+						<view class="vux-x-input weui-cell">
+							<view class="weui-cell__hd">
+
+							</view>
+							<view class="weui-cell__bd weui-cell__primary">
+								<input id="vux-x-input-6hmid" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" type="text" class="weui-input" />
+							</view>
+							<view class="weui-cell__ft"><i class="weui-icon weui_icon_clear weui-icon-clear" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_warn weui-icon-warn" title="" style="display: none;"></i>
+								<i class="weui-icon weui_icon_success weui-icon-success" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_success weui-icon-success" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_warn weui-icon-warn" style="display: none;"></i> </view>
+							<view class="vux-toast">
+								<view class="weui-mask_transparent" style="display: none;"></view>
+								<view class="weui-toast weui-toast_text" style="width: auto; display: none;"><i class="weui-icon-success-no-circle weui-icon_toast" style="display: none;"></i>
+									<view class="weui-toast__content" style="padding: 10px;"></view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view>
+					<view class="weui-cells__title">输入每人领取次卡的次数:</view>
+					<view class="weui-cells">
+						<view class="vux-x-input weui-cell">
+							<view class="weui-cell__hd">
+							</view>
+							<view class="weui-cell__bd weui-cell__primary">
+								<input id="vux-x-input-jk8ws" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" type="text" class="weui-input" />
+							</view>
+							<view class="weui-cell__ft"><i class="weui-icon weui_icon_clear weui-icon-clear" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_warn weui-icon-warn" title="" style="display: none;"></i>
+								<i class="weui-icon weui_icon_success weui-icon-success" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_success weui-icon-success" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_warn weui-icon-warn" style="display: none;"></i> </view>
+							<view class="vux-toast">
+								<view class="weui-mask_transparent" style="display: none;"></view>
+								<view class="weui-toast weui-toast_text" style="width: auto; display: none;"><i class="weui-icon-success-no-circle weui-icon_toast" style="display: none;"></i>
+									<view class="weui-toast__content" style="padding: 10px;"></view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="put-text">将会扣除0次</view>
+			</view>
+			<view flex="box:mean" class="button-webkit">
+				<view class="but cancel">取消</view>
+				<view class="but assign">微信分享</view>
+
+			</view>
+		</view>
+	</view>
+	<view class="vux-x-dialog dialog-demo">
+		<view class="weui-mask" style="display: none;"></view>
+		<view class="weui-dialog" style="display: none;">
+			<view class="dialog-title">次卡消次</view>
+			<view class="dialog-box">
+				<view>
+					<view class="weui-cells__title">输入消次密码:</view>
+					<view class="weui-cells">
+						<view class="vux-x-input weui-cell">
+							<view class="weui-cell__hd">
+
+							</view>
+							<view class="weui-cell__bd weui-cell__primary">
+
+								<input id="vux-x-input-mlyww" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" type="password" class="weui-input" />
+
+							</view>
+							<view class="weui-cell__ft"><i class="weui-icon weui_icon_clear weui-icon-clear" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_warn weui-icon-warn" title="" style="display: none;"></i>
+								<i class="weui-icon weui_icon_success weui-icon-success" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_success weui-icon-success" style="display: none;"></i> <i class="vux-input-icon weui-icon weui_icon_warn weui-icon-warn" style="display: none;"></i> </view>
+							<view class="vux-toast">
+								<view class="weui-mask_transparent" style="display: none;"></view>
+								<view class="weui-toast weui-toast_text" style="width: auto; display: none;"><i class="weui-icon-success-no-circle weui-icon_toast" style="display: none;"></i>
+									<view class="weui-toast__content" style="padding: 10px;"></view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="put-text">请到俱乐部前台处输入消次密码</view>
+			</view>
+			<view flex="box:mean" class="button-webkit">
+				<view class="but cancel">取消</view>
+				<view class="but assign">确定</view>
+			</view>
+		</view>
+	</view>
+</view>

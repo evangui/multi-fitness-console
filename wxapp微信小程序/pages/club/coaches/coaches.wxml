@@ -1,0 +1,73 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+
+<view class="webkit-center coaches">
+	<form bindsubmit="formSubmit" report-submit >
+
+	<view class="header">
+		<view class="header-webkit">
+			<view class="top-switch-webkit flex-left" style="overflow: inherit;">
+				<view class="flex-box1">
+					<navigator class="type-switch-but active" url="javascript:void(0);">教练列表</navigator>
+				</view>
+				<view class="flex-box1">
+					<navigator class="type-switch-but list-record" url="/pages/club/member-bespeak-record/member-bespeak-record?clubId={{clubId}}">预约记录</navigator>
+				</view>
+			</view>
+			<view class="coaches-header-webkit" style="display: none;">专业、高水平的师资队伍新动态肌肉训练学校的教练招聘是严谨而科学的</view>
+		</view>
+	</view>
+	<view class="article">
+		<view class="article-webkit">
+			<view wx:if="{{!coachList}}">
+				<view class="dropload-down">
+					<view class="dropload-load"><text class="loading"></text>加载中-请等待...</view>
+				</view>
+			</view>
+
+			<view wx:elif="{{coachList.length === 0}}">
+				<view class="no-content">暂无教练</view>
+			</view>
+
+			<view wx:elif="{{coachList.length > 0}}">
+				<scroll-view scroll-y="true" style="height: 90vh" bindscrolltolower="loadMore">
+					<view class="coaches-list-ul ul-index">
+						<block wx:for="{{coachList}}" wx:for-item="item" wx:key="id">
+							<view class="coaches-list">
+								<view class="flex-left">
+									<view class="list-icon  flex-box0">
+										<image src="{{item.avatar || basic.avatar(item.userId)}}" /> </view>
+									<view class="list-nr  flex-box1">
+										<view class="top flex-right">
+											<view bindtap="goToBespeak" class="button flex-box0" data-coachinfo="{{item}}">
+												<!--<button class="noborder-btn" form-type="submit">-->
+												<view>预约</view>
+												<!--</button>-->
+											</view>
+											<view class="sm-top flex-left flex-box1">
+												<view class="name flex-box0">{{item.realname}}</view>
+												<view class="gender-icon flex-box1">
+													<image wx:if="{{item.gender==1}}" src="https://app.newugo.cn/assets/web/mobile/wechat/coaches/images/female.png" />
+													<image wx:if="{{item.gender==2}}" src="https://app.newugo.cn/assets/web/mobile/wechat/coaches/images/male.png" />
+												</view>
+											</view>
+										</view>
+										<view class="bottom-text p"></view>
+									</view>
+								</view>
+							</view>
+						</block>
+					</view>
+
+					<view wx:if="{{!allowInfinite}}" class="dropload-load preloader infinite-scroll-preloader"><text class="loading"></text>加载中-请等待...</view>
+					<view wx:if="{{showListBottom}}" class="bottom-tip font-gray-extra" style="text-align: center;padding:10px;">机智如你，我就是卧底</view>
+				</scroll-view>
+			</view>
+
+			<view class="xila ul-index">
+				<view class="list-record-webkit">
+				</view>
+			</view>
+		</view>
+	</view>
+	</form>
+</view>

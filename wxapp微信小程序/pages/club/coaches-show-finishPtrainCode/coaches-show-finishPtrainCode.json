@@ -1,0 +1,12 @@
+{
+	"backgroundColor": "#4F4B5F",
+	"backgroundTextStyle":"light",
+	
+  "navigationBarTitleText": "私教消课",
+  "navigationBarTextStyle":"white",
+  "navigationBarBackgroundColor": "#4F4B5F",
+  
+  "enablePullDownRefresh": false
+}
+
+

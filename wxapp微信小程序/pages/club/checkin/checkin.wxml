@@ -1,0 +1,44 @@
+<!--pages/club/checkin/checkin.wxml-->
+<view class="page">
+	<form bindsubmit="formSubmit" report-submit >
+	<i-alert wx:if="{{!checkFinished}}" show-icon type="info" closable bind:close="handleClick">
+		签到中...
+	</i-alert>
+	<i-alert wx:elif="{{!checkSuccess}}" show-icon type="warning" closable bind:close="handleClick">
+		{{checkMessage}}
+	</i-alert>
+	<i-alert wx:elif="{{checkSuccess}}" show-icon type="success" closable bind:close="handleClick">
+		签到成功！
+	</i-alert>
+	
+	 <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon wx:if="{{!checkFinished}}" type="waiting" size="93"></icon>
+            <icon wx:elif="{{!checkSuccess}}" type="warn" size="93"></icon>
+            <icon wx:elif="{{checkSuccess}}" type="success" size="93"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view wx:if="{{!checkFinished}}" class="weui-msg__title">签到中...</view>
+            <view  wx:elif="{{!checkSuccess}}" class="weui-msg__title">签到失败</view>
+            <view wx:elif="{{checkSuccess}}" class="weui-msg__title">签到成功</view>
+            <view class="weui-msg__desc">俱乐部：{{checkinRecord.clubName}}</view>
+        </view>
+        
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <!--<button class="weui-btn" type="primary">进入俱乐部</button>-->
+                <button bindtap="redirectToClub" class="weui-btn" form-type="submit" type="default">进入俱乐部</button>
+            </view>
+        </view>
+        <view class="weui-msg__extra-area">
+            <view class="weui-footer">
+                <!--<view class="weui-footer__links">
+                    <navigator url="" class="weui-footer__link">底部链接文本</navigator>
+                </view>-->
+                <view class="weui-footer__text">Copyright © 2018 杏运树</view>
+            </view>
+        </view>
+    </view>
+    </form>
+</view>
+

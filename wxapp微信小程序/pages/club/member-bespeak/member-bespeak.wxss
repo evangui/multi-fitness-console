@@ -1,0 +1,111 @@
+		.timeline-left_item {
+			margin-top: -12px;
+		}
+		
+		.timeline-right_item {
+			text-align: left;
+			border-top: solid 1px #d9d9d9;
+			margin: 0 10px;
+			height: 1.6em;
+		}
+		
+		.border-no {
+			border: solid 0 #d9d9d9;
+		}
+		
+		.bordertop-red {
+			border-top: solid 1px #ff3b30;
+		}
+		
+		.bordertop-halfhour {
+			text-align: left;
+			border-top: solid 1px #eeefef;
+			margin: 0 10px;
+			height: 1.6em;
+		}
+		
+		.timeline-content-bespeak {
+			margin: 3px;
+			padding: 3px 15px;
+			text-align: left;
+			/*background-color: #d0d0d0;*/
+			font-size: 16px;
+			line-height: 22px;
+			height: 1em;
+			color: #ffffff;
+			border-radius: 3px;
+		}
+		
+		.timeline-content {
+			margin: 3px;
+			padding: 3px 15px;
+			text-align: left;
+			background-color: #d0d0d0;
+			font-size: 16px;
+			line-height: 22px;
+			color: #ffffff;
+			border-radius: 3px;
+		}
+		
+		.timeline-content-item2 {
+			height: 2.4em;
+		}
+		
+		.timeline-content-item3 {
+			height: 4.1em;
+		}
+		
+		.timeline-content-item4 {
+			height: 5.8em;
+		}
+		
+		.timeline-content-item5 {
+			height: 7.5em;
+		}
+		
+		.timeline-content-item6 {
+			height: 8.8em;
+		}
+		/*当前预约状态，0正常 1未确认 2已确认 3学员已取消 4 教练已取消',*/
+		
+		.timeline-content-status1 {
+			background-color: #ff9500!important;
+		}
+		
+		.timeline-content-status2 {
+			background-color: #69b076!important
+		}
+		
+		.timeline-content-status3 {
+			background-color: #d0d0d0;
+		}
+		
+		.timeline-content-status4 {
+			background-color: #d0d0d0;
+		}
+		
+		.timeline-content-status5 {
+			background-color: #d0d0d0;
+		}
+		
+		.color-white {
+			color: #ffffff;
+		}
+		
+		.dayline {
+			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			border-bottom: solid 1px #e5e5e5;
+			text-align: center;
+		}
+		
+		.dayline-tip1 {
+			font-size: 18px;
+			font-weight: 600;
+		}
+		
+		.dayline-tip2 {
+			font-size: 14px;
+			font-weight: 400;
+		}

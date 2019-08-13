@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"i-steps": "../../../components/iview/steps/index",
+    "i-step": "../../../components/iview/step/index",
+    "i-alert": "../../../components/iview/alert/index"
+ 	},
+  "navigationBarTitleText": "成为教练",
+  "enablePullDownRefresh": false
+}

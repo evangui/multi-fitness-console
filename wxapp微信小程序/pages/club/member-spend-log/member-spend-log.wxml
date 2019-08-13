@@ -1,0 +1,64 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+<view class="page">
+	<i-tabs current="{{ current }}" color="#ff9500" bindchange="handleChange"
+		class="fix-top">
+    <i-tab key="personalCard" title="私教卡"></i-tab>
+    <i-tab key="onceCard" title="次卡"></i-tab>
+    <i-tab key="storedCard" title="储值卡"></i-tab>
+	</i-tabs>
+	
+	<view class="page__bd bg-color-white" style="margin-top:52px;">
+		<view class="weui-panel_access">
+			<view class="weui-panel__hd font-gray-title weui-flex">
+				<view>消课数量 </view>
+				<view class="weui-flex__item weui-cell__ft">{{itemTotal}}</view>
+			</view>
+			
+			<view class="weui-panel__bd">
+				<view style="padding:20px;" wx:if="{{itemList.length==0}}" class="weui-loadmore weui-loadmore_line2">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+        </view>
+				
+				<scroll-view scroll-y="true"  bindscrolltolower="loadMore">
+					<block wx:for="{{itemList}}" wx:for-item="item" wx:key="id">
+            <view wx:if="item.log_type==2" class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{basic.timeFormat(item.insertTime)}} 消课</view>
+                <view class="weui-media-box__desc">会员姓名：{{item.userRealname}}</view>
+                <view class="weui-media-box__desc">用户手机号：{{item.userPhone}}</view>
+                <view class="weui-media-box__desc">所属教练：{{item.coachName}}</view>
+                <view class="weui-media-box__desc">私教卡名称：{{item.cardType}}</view>
+                <view class="weui-media-box__desc">会员评分：{{item.commentRank}}</view>
+            </view>
+             	<!--次卡-->
+            <view wx:elif="item.log_type==3" class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{basic.timeFormat(item.insertTime)}} 消次</view>
+                <view class="weui-media-box__desc">会员姓名：{{item.userRealname}}</view>
+                <view class="weui-media-box__desc">用户手机号：{{item.userPhone}}</view>
+                <view class="weui-media-box__desc">所属教练：{{item.coachName}}</view>
+                <view class="weui-media-box__desc">次卡名称：{{item.cardType}}</view>
+            </view>
+           	<!-- 储值卡-->
+            <view wx:elif="item.log_type==4" class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{basic.timeFormat(item.insertTime)}} 消费</view>
+                <view class="weui-media-box__desc">会员姓名：{{item.userRealname}}</view>
+                <view class="weui-media-box__desc">用户手机号：{{item.userPhone}}</view>
+                <view class="weui-media-box__desc">消费金额：{{item.costMoney}}</view>
+                <view class="weui-media-box__desc">储值卡名称：{{item.cardType}}</view>
+            </view>
+            <view wx:else class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{basic.timeFormat(item.insertTime)}} 消费</view>
+                <view class="weui-media-box__desc">会员姓名：{{item.userRealname}}</view>
+                <view class="weui-media-box__desc">用户手机号：{{item.userPhone}}</view>
+                <view class="weui-media-box__desc">消费次数：{{item.costs}}</view>
+                <view class="weui-media-box__desc">卡名称：{{item.cardType}}</view>
+            </view>
+            
+					</block>
+					<view wx:if="{{!allowInfinite}}" class="dropload-load preloader infinite-scroll-preloader"><text class="loading"></text>加载中-请等待...</view>
+					<view wx:if="{{showListBottom}}" class="bottom-tip font-gray-extra" style="text-align: center;padding:10px;">机智如你，我就是卧底</view>
+				</scroll-view>
+			</view>
+		</view>
+
+	</view>
+</view>

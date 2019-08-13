@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"i-spin": "../../../components/iview/spin/index",
+		"i-icon": "../../../components/iview/icon/index"
+	},
+	"navigationBarTitleText": "教练-排课管理",
+	"enablePullDownRefresh": false
+}

@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/login/login",
+    "pages/general/clublist/clublist",
+    
+    "pages/scancode/scancode",
+    
+    "pages/club/home/home",
+    "pages/club/notvip/notvip",
+    "pages/club/checkin/checkin",
+    "pages/club/card/card",
+    "pages/club/coaches/coaches",
+    
+    "pages/club/coach-join/coach-join",
+    "pages/club/coaches-show-finishPtrainCode/coaches-show-finishPtrainCode",
+    "pages/club/coach-bespeak-record/coach-bespeak-record",
+    "pages/club/coach-bespeak-detail/coach-bespeak-detail",
+    "pages/club/coach-student-list/coach-student-list",
+    "pages/club/coach-ptrain-record/coach-ptrain-record",
+
+    "pages/club/staff-student-detail/staff-student-detail",
+    "pages/club/staff-student-cards/staff-student-cards",
+
+    "pages/club/member-bespeak/member-bespeak",
+    "pages/club/member-bespeak-detail/member-bespeak-detail",
+    "pages/club/member-bespeak-record/member-bespeak-record",
+    "pages/club/member-checkin-record/member-checkin-record",
+    "pages/club/member-finishPtrain/member-finishPtrain",
+    "pages/club/member-recharge-log/member-recharge-log",
+    "pages/club/member-spend-log/member-spend-log",
+    "pages/address/address",
+    
+    "pages/mine/mine",
+    "pages/mine/home/home",
+    
+    "pages/tool/clearCache",
+    "pages/iviewbutton/index"
+  ],
+  "window":{
+  	"navigationStyle": "default",
+  	"backgroundColor": "#f8f8f8",
+		"backgroundTextStyle":"light",
+		
+	  "navigationBarTitleText": "杏运树",
+	  "navigationBarTextStyle":"black",
+	  "navigationBarBackgroundColor": "#ffffff"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,36 @@
+<view class="page">
+	<view class="page__bd" style="padding:80px 25px; text-align: center;">
+
+		<view class="weui-flex bg-color-white" style="flex-direction: column;padding:20px;border-radius: 6px;">
+			<view class="weui-flex__item">
+				<image wx:if="{{!finished}}" style="width:240px;height: 240px;" src="{{codeImg}}"></image>
+				<view wx:else >
+            <icon type="success" size="110"></icon>
+				</view>
+			</view>
+			<view class="weui-flex font-gray-extra" style="margin:25px auto 0;text-align: center;">
+				<block wx:if="{{!finished}}">
+					请出示该小程序码给学员通过微信扫一扫即可完成
+				</block>
+				<block wx:else>
+					用户已完成消课
+				</block>
+			</view>
+		</view>
+
+		<view class="weui-flex" style="background-color:rgb(185,183,191);margin:16px 0 0 0;padding:0;border-radius: 10px;">
+			<view class="" style="">
+				<image src="{{!finished ? '/images/default_avatar.png' : basic.avatar(ptrainInfo.userId)}}   " 
+					style="width:55px;height: 55px;border-top-left-radius: 6px;border-bottom-left-radius: 6px;"/>
+			</view>
+			<view class="weui-flex__item font-gray-content" style="font-size:18px;text-align: left;margin:14px;">
+				<block wx:if="{{!finished}}">
+					正在等待 <text class="text-color-blue">学员</text> 确认...
+				</block>
+				<block wx:else>
+					学员<text class="text-color-blue">{{ptrainInfo.userRealname}}</text> 已确认完成消课
+				</block>
+			</view>
+		</view>
+	</view>
+</view>

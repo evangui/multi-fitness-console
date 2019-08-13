@@ -1,0 +1,10 @@
+{
+	"usingComponents": {
+    "i-tag": "../../../components/iview/tag/index"
+ },
+  
+  "navigationBarTitleText": "预约详情",
+  
+  "enablePullDownRefresh": false
+}
+

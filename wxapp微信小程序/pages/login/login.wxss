@@ -1,0 +1,128 @@
+/* pages/login/login.wxss */
+.header-webkit {
+	text-align: center;
+	overflow: hidden;
+}
+
+.header-club-webkit {
+	margin-top: 60rpx;
+}
+
+.header-club-webkit .club-logo {
+	max-width: 100%;
+	width: 172rpx;
+	height: 172rpx;
+	border: 2px solid #fff;
+	border-radius: 50%;
+}
+
+.header-club-webkit .club-name {
+	font-size: 40rpx;
+	color: #3a3c45;
+	height: 99rpx;
+	line-height: 99rpx;
+}
+
+.article-webkit {
+	text-align: center;
+}
+
+.form-webkit {
+	margin: 70rpx auto 54rpx auto;
+}
+
+.form-webkit .is-Gip {
+	border: 2rpx solid #dedede;
+	border-radius: 8rpx;
+	overflow: hidden;
+	margin: 0 62rpx;
+}
+
+.form-webkit .is-Gip .input-webkit {
+	height: 98rpx;
+	position: relative;
+	border-top: 2rpx solid #dedede;
+	background: #fff;
+}
+
+.form-webkit .is-Gip .input-webkit:first-child {
+	border-top: 0;
+}
+
+.form-webkit .is-Gip .input-webkit input {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 20rpx;
+	width: 100%;
+	color: #000;
+	font-size: 30rpx;
+	/*text-indent: 30rpx;*/
+	text-align: left;
+}
+
+.form-webkit .is-Gip .input-webkit input::-webkit-input-placeholder {
+	color: #b3b3b3;
+	font-size: 30rpx;
+}
+
+.form-webkit .is-Gip .input-webkit .code-but {
+	border-radius: 8rpx;
+	background: #ff9800;
+	color: #fff;
+	width: 159rpx;
+	height: 56rpx;
+	text-align: center;
+	line-height: 58rpx;
+	font-size: 26rpx;
+	text-indent: 0;
+	position: absolute;
+	right: 18rpx;
+	top: 18rpx;
+}
+
+.form-webkit .is-Gip .input-webkit .code-but-disable {
+	border-radius: 8rpx;
+	background: #9e9e9ed1;
+	color: #fff;
+	width: 159rpx;
+	height: 56rpx;
+	text-align: center;
+	line-height: 58rpx;
+	font-size: 26rpx;
+	text-indent: 0;
+	position: absolute;
+	right: 18rpx;
+	top: 18rpx;
+}
+
+.form-webkit .login-but {
+	width: auto;
+	height: 98rpx;
+	line-height: 100rpx;
+	margin: 30rpx 62rpx 0 62rpx;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, from(#FF9800), to(#FFC107));
+	font-size: 30rpx;
+	color: #fff;
+	border-radius: 8rpx;
+}
+
+.form-webkit .xx-foelg {
+	width: auto;
+	height: 50rpx;
+	margin: 149rpx 62rpx 0 62rpx;
+}
+
+.form-webkit .xx-foelg .text {
+	font-size: 30rpx;
+	color: #6e6e6e;
+	width: auto;
+	line-height: 52rpx;
+	max-width: 81%;
+}
+
+.footer-img {
+	max-width: 100%;
+	width: 601rpx;
+	height: auto;
+}

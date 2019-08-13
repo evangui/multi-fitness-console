@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+    "i-alert": "../../../components/iview/alert/index"
+ },
+    "navigationBarTitleText": "签到",
+    "enablePullDownRefresh": false
+}

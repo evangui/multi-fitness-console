@@ -1,0 +1,228 @@
+<view class="webkit-center">
+
+	<form bindsubmit="formSubmit" report-submit >
+	<view class="header banner-two">
+		<view class="banner-webkit">
+			<swiper style="height:420rpx;" indicator-dots="true" indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="#fff" autoplay="true" interval="5000" duration="1000">
+				<block wx:if="{{carouselAds.length > 0}}">
+					<block wx:for="{{carouselAds}}" wx:for-item="item" wx:key="id">
+						<swiper-item>
+							<navigator url="">
+								<image class="slide-img" src="{{item.content}}" mode="aspectFill" lazy-load="true" />
+							</navigator>
+						</swiper-item>
+					</block>
+					<!--<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="https://xysmch.whbws.cn/assets/panel/images/sjfw/16.png" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="https://xysmch.whbws.cn/assets/panel/images/sjfw/3.png" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="https://xysmch.whbws.cn/assets/panel/images/sjfw/5.png" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="https://xysmch.whbws.cn/assets/panel/images/sjfw/6.png" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="https://mmbiz.qpic.cn/mmbiz_jpg/fbIaTo6W3KqIWauaAArEWdFxL6ycrhKtKvCgBYCdvCtcIpv5R9K1JiaCjWvOhibia0NIoldW0csKtUQOiboqp1EMkA/640" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>-->
+				</block>	
+				
+				<block wx:else>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="http://yumimg.snowfly.info/activity/image/149688922751400.jpg" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="http://yumimg.snowfly.info/activity/image/149688927157756.jpg" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator url="">
+							<image class="slide-img" src="http://yumimg.snowfly.info/activity/image/149688921478328.jpg" mode="aspectFill" lazy-load="true" />
+						</navigator>
+					</swiper-item>
+				</block>
+			</swiper>
+
+			<view class="club-webkit">
+				<view class="club-logo-webkit" style="">
+					<image src="{{clubInfo.logo ? clubInfo.logo : '/images/logo.png'}}" />
+				</view>
+				<view style="text-align:left;padding-bottom: 1rpx;width: 45%;">
+					<view class="h2 club-name">{{clubInfo.name}}</view>
+					<text wx:if="{{clubInfo.clubStyle == 1}}" class="club-describe">工作室版</text>
+					<text wx:elif="{{clubInfo.clubStyle == 2}}" class="club-describe">俱乐部版</text>
+					<text wx:else class="club-describe">会员版</text>
+				</view>
+				<picker wx-if="{{roleCodes && roleCodes.length>0}}" style="flex:1;text-align: right;" bindchange="bindRoleCodeChange" value="{{roleCodeIndex}}" range="{{roleCodes}}">
+					<view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+						<view class="weui-cell__bd text-color-gray">{{roleTip}}</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</view>
+				</picker>
+			</view>
+
+			<view class="two-header-but-webkit">
+				<view class="but-webkit">
+						<image class="icon" src="https://app.newugo.cn/assets/web/mobile/wechat/club/images/sys-3.png" />
+						<text class="text" bindtap="scancode">扫一扫</text>
+				</view>
+				<navigator url="/pages/club/card/card?clubId={{clubInfo.id}}" class="but-webkit">
+					<button class="noborder-btn" form-type="submit" data-type="card">
+					<image class="icon" src="https://app.newugo.cn/assets/web/mobile/wechat/club/images/wdewm-3.png" />
+					<text class="text">会员卡</text>
+					</button>
+				</navigator>
+				
+			</view>
+		</view>
+	</view>
+	
+	
+	<view wx:if="{{currentRole == 'coach'}}" class="stat-content bg-color-white weui-flex">
+			<view class="item weui-flex__item">
+				<navigator url="/pages/club/coach-ptrain-record/coach-ptrain-record?clubId={{clubInfo.id}}&coachId={{coachInfo.id}}" class="block">
+					<view class="num text-color-orange">{{newFinishedPtrainNum}}</view>
+					<view class="name font-gray-extra">今日消课</view>
+				</navigator>
+			</view>
+
+			<view class="item weui-flex__item">
+				<navigator url="" class="block">
+					<view class="num text-color-orange">{{newPtrainCardNum}}</view>
+					<view class="name font-gray-extra">私课销售</view>
+				</navigator>
+			</view>
+			<view class="item weui-flex__item">
+				<navigator url="/pages/club/coach-bespeak-record/coach-bespeak-record?clubId={{clubInfo.id}}" class="block">
+					<view class="num text-color-orange">{{newBespeakNum}}</view>
+					<view class="name font-gray-extra">新增预约</view>
+				</navigator>
+			</view>
+	</view>
+	
+	<view class="icon-content bg-color-white weui-flex">
+		<block wx:if="{{currentRole == 'coach'}}">
+			<view class="item ">
+				<navigator url="/pages/club/coach-bespeak-record/coach-bespeak-record?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="https://xysmch.whbws.cn/assets/panel/images/course.png" />
+					<view class="name font-gray-content">排课管理</view>
+					</button>
+				</navigator>
+			</view>
+			<view class="item ">
+				<navigator url="/pages/club/coaches-show-finishPtrainCode/coaches-show-finishPtrainCode?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="http://fitimg.yunimg.cn/dev/post/background/146121970727595.png" />
+					<view class="name font-gray-content">私教消课</view>
+					</button>
+				</navigator>
+			</view>
+			<view class="item ">
+				<navigator url="/pages/club/coach-ptrain-record/coach-ptrain-record?clubId={{clubInfo.id}}&coachId={{coachInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="https://xysmch.whbws.cn/assets/panel/images/spend.png" />
+					<view class="name font-gray-content">消课记录</view>
+					</button>
+				</navigator>
+			</view>
+			<view class="item ">
+				<navigator url="/pages/club/coach-student-list/coach-student-list?clubId={{clubInfo.id}}&coachId={{coachInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="https://xysmch.whbws.cn/assets/panel/images/student.png" />
+					<view class="name font-gray-content">学员列表</view>
+					</button>
+				</navigator>
+			</view>
+		</block>
+		<block wx:else>
+			<view class="item ">
+				<navigator url="/pages/club/coaches/coaches?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="http://fitimg.yunimg.cn/dev/post/background/146121970727595.png" />
+					<view class="name font-gray-content">私人教练</view>
+					</button>
+				</navigator>
+			</view>
+			<view class="item">
+				<navigator url="/pages/club/member-bespeak-record/member-bespeak-record?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="https://xysmch.whbws.cn/assets/panel/images/bespeak_record.jpg" />
+					<view class="name font-gray-content">预约记录</view>
+					</button>
+				</navigator>
+			</view>
+			<!--<view class="item">
+				<navigator url="/pages/club/member-bespeak-record/member-bespeak-record?clubId={{clubInfo.id}}" class="block">
+					<image class="icon" src="http://fitimg.yunimg.cn/post/background/146132123682706.png" />
+					<view class="name font-gray-content">意见反馈</view>
+				</navigator>
+			</view>-->
+			<view class="item">
+				<navigator url="/pages/club/member-recharge-log/member-recharge-log?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="http://fitimg.yunimg.cn/dev/post/147073510113925.png!100" />
+					<view class="name font-gray-content">充值记录</view>
+					</button>
+				</navigator>
+			</view>
+			<view class="item">
+				<navigator url="/pages/club/member-spend-log/member-spend-log?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="http://fitimg.yunimg.cn/dev/post/147073516126671.png!100" />
+					<view class="name font-gray-content">消费记录</view>
+					</button>
+				</navigator>
+			</view>
+			<view class="item">
+				<navigator url="/pages/club/member-checkin-record/member-checkin-record?clubId={{clubInfo.id}}" class="block">
+					<button class="noborder-btn" form-type="submit">
+					<image class="icon" src="http://fitimg.yunimg.cn/dev/post/147073513275362.png!100" />
+					<view class="name font-gray-content">签到记录</view>
+					</button>
+				</navigator>
+			</view>
+			
+			
+		</block>
+	</view>
+
+
+	<view class="footer">
+		<view class="footer-webkit">
+			<view class="club-dz-webkit" flex="dir:top box:mean">
+				<view class="bottom" bindtap="openLocation" style="display:flex;flex-direction: row;">
+					<view flex-box="0" class="icon-webkit">
+						<image src="https://app.newugo.cn/assets/web/mobile/wechat/club/images/dw.png" mode="aspectFit" />
+					</view>
+					<text class="text">{{clubInfo.clubCity}} {{clubInfo.clubAddress}}</text>
+				</view>
+				<view class="bottom" bindtap="callClub" style="display:flex;flex-direction: row;">
+					<view class="icon-webkit">
+						<image src="https://app.newugo.cn/assets/web/mobile/wechat/club/images/dh.png" />
+					</view>
+					<text class="text">{{clubInfo.clubPhone}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<i-toast id="toast" />
+	
+	</form>
+</view>

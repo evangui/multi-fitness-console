@@ -1,0 +1,111 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx776e60ee1eab35da",
+	"projectname": "%E6%9D%8F%E8%BF%90%E6%A0%91",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "俱乐部主页扫码",
+					"pathName": "pages/club/home/home",
+					"query": "authCode=xys36",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "教练列表",
+					"pathName": "pages/club/coaches/coaches",
+					"query": "clubId=1",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "签到扫码",
+					"pathName": "pages/club/checkin/checkin",
+					"query": "clubId=80",
+					"scene": "1011"
+				},
+				{
+					"id": 3,
+					"name": "预约教练",
+					"pathName": "pages/club/member-bespeak/member-bespeak",
+					"query": "coachId=1",
+					"scene": "1011"
+				},
+				{
+					"id": 4,
+					"name": "完课评价-扫码",
+					"pathName": "pages/club/member-finishPtrain/member-finishPtrain",
+					"query": "scene=a%3D3zf38k5pa%26b%3D6%26c%3D1",
+					"scene": "1011"
+				},
+				{
+					"id": 5,
+					"name": "成为俱乐部教练-扫码",
+					"pathName": "pages/club/coach-join/coach-join",
+					"query": "authCode=xys36",
+					"scene": "1011"
+				},
+				{
+					"id": 6,
+					"name": "清空缓存",
+					"pathName": "pages/tool/clearCache/clearCache",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 7,
+					"name": "预约详情",
+					"pathName": "pages/club/coach-bespeak-detail/coach-bespeak-detail",
+					"query": "id=28",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "学员列表",
+					"pathName": "pages/club/coach-student-list/coach-student-list",
+					"query": "clubId=1",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "签到-扫码",
+					"pathName": "pages/club/checkin/checkin",
+					"query": "clubId=7",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

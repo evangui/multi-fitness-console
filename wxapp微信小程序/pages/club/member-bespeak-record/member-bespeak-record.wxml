@@ -1,0 +1,61 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+<view class="webkit-center coaches">
+	<view class="header">
+		<view class="header-webkit">
+			<view class="top-switch-webkit flex-left" style="overflow: inherit;">
+				<view class="flex-box1">
+					<navigator class="type-switch-but" url="/pages/club/coaches/coaches?clubId={{clubId}}">教练列表</navigator>
+				</view>
+				<view class="flex-box1">
+					<navigator class="type-switch-but list-record active">预约记录</navigator>
+				</view>
+			</view>
+			<view class="coaches-header-webkit" style="display: none;">专业、高水平的师资队伍新动态肌肉训练学校的教练招聘是严谨而科学的</view>
+		</view>
+	</view>
+	<view class="article">
+		<view class="article-webkit">
+			
+			<view wx:if="{{!recordList}}">
+				<view class="dropload-down">
+					<view class="dropload-load"><text class="loading"></text>加载中-请等待...</view>
+				</view>
+			</view>
+
+			<view wx:elif="{{recordList.length === 0}}">
+				<view class="no-content">暂无记录</view>
+			</view>
+			
+			
+			<view wx:elif="{{recordList.length > 0}}">
+				<scroll-view scroll-y="true" style="height: 90vh" bindscrolltolower="loadMore">
+					
+					<view class="coaches-list-ul ul-index">
+							<navigator wx:for="{{recordList}}" wx:for-item="item" wx:key="id" 
+								url="../member-bespeak-detail/member-bespeak-detail?id={{item.id}}" class="xila ul-index">
+								<view class="list-record-webkit">
+									<view class="record-list">
+										<view class="time p">{{basic.friendlytime(item.insertTime)}} 预约了</view>
+										<view class="center-rl flex-left">
+											<view class="name p flex-box0">{{item.coachName}}</view>
+											<text class="start-time flex-box1">{{basic.timeFormat(item.fromTime)}}开始的私教课程</text> 
+										</view>
+										<view class="result p">{{basic.getBespeakStatusStr(item.status)}}</view>
+									</view>
+								</view>
+							</navigator>
+					</view>
+
+					<view wx:if="{{!allowInfinite}}" class="dropload-load preloader infinite-scroll-preloader"><text class="loading"></text>加载中-请等待...</view>
+					<view wx:if="{{showListBottom}}" class="bottom-tip font-gray-extra" style="text-align: center;padding:10px;">机智如你，我就是卧底</view>
+				</scroll-view>
+			</view>
+			
+		</view>
+	</view>
+	<view class="footer">
+		<view class="footer-webkit">
+		</view>
+	</view>
+
+</view>

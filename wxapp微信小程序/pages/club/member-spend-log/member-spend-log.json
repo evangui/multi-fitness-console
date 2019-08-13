@@ -1,0 +1,12 @@
+{
+	"usingComponents": {
+    "i-tabs": "../../../components/iview/tabs/index",
+    "i-tab": "../../../components/iview/tab/index",
+    "i-panel": "../../../components/iview/panel/index"
+ 	},
+ 
+  "navigationBarTitleText": "消费记录",
+  "enablePullDownRefresh": false
+}
+
+

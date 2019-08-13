@@ -1,0 +1,127 @@
+<view class="webkit-center">
+	<form bindsubmit="formSubmit" report-submit>
+		<view class="page__bd ">
+			<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+
+			<view wx:if="{{authMode == 200}}" class="weui-msg">
+				<view class="weui-msg__icon-area">
+					<icon type="success" size="93"></icon>
+				</view>
+				<view class="weui-msg__text-area">
+					<view class="weui-msg__desc">您已经成为该俱乐部教练</view>
+				</view>
+
+			</view>
+
+			<view wx:if="{{authMode == 0}}" class="weui-msg">
+				<view class="weui-msg__icon-area">
+					<icon type="info" size="93"></icon>
+				</view>
+				<view class="weui-msg__text-area">
+					<view class="weui-msg__desc">请选择认证成为教练的方式</view>
+				</view>
+
+				<view class="weui-msg__opr-area">
+					<view class="weui-btn-area">
+						<button bindtap="changeAuthMode1" class="weui-btn" type="primary" form-type="submit">自己填写教练资料-立即认证</button>
+						<button bindtap="changeAuthMode2" class="weui-btn" type="default" form-type="submit">让俱乐部前台操作-协助认证</button>
+					</view>
+				</view>
+			</view>
+
+			<view wx:if="{{authMode == 1}}" style="padding: 20px 0;">
+				<i-steps>
+					<i-step status="finish">
+						<view slot="title">
+							已完成
+						</view>
+						<view slot="content">
+							注册为杏运树手机用户
+						</view>
+					</i-step>
+					<i-step status="process">
+						<view slot="title">
+							进行中
+						</view>
+						<view slot="content">
+							填写教练基本信息
+						</view>
+					</i-step>
+					<i-step status="">
+						<view slot="title">
+							待系统认证
+						</view>
+						<view slot="content">
+							系统认证为教练，并关联杏运树手机用户
+						</view>
+					</i-step>
+				</i-steps>
+
+				<i-alert wx:if="{{!hideTip}}" type="info" closable bind:close="handleClick">
+					请填写教练基本信息以完成教练认证
+				</i-alert>
+				
+				<view class="weui-cells__title">教练姓名</view>
+				<view class="weui-cells weui-cells_after-title">
+					<view class="weui-cell weui-cell_input">
+						<view class="weui-cell__bd">
+							<input value="{{realname}}" bindinput="bindInputRealname" class="weui-input" placeholder="请输入姓名" />
+						</view>
+					</view>
+				</view>
+				<view class="weui-cells__title">擅长</view>
+				<view class="weui-cells weui-cells_after-title">
+					<view class="weui-cell weui-cell_input">
+						<view class="weui-cell__bd">
+							<input value="{{goodAt}}" bindinput="bindInputGoodat"  class="weui-input" placeholder="请输入擅长项目，多个用逗号分隔" />
+						</view>
+					</view>
+				</view>
+
+				<view class="weui-msg__opr-area" style="margin-top:40px;">
+					<view class="weui-btn-area">
+						<button bindtap="instantJoin" class="weui-btn" type="primary">立即认证为教练</button>
+						<button bindtap="changeAuthMode2" class="weui-btn" type="default" form-type="submit">让俱乐部前台操作-协助认证</button>
+					</view>
+				</view>
+			</view>
+
+			<view wx:if="{{authMode == 2}}" style="padding:18px;background-color: #ffffff;">
+		    <view class="title" style="margin: 20px;">认证步骤说明</view>
+		    
+				<i-steps current="{{verticalStep}}" direction="vertical">
+					<i-step>
+						<view slot="title">
+							已完成
+						</view>
+						<view slot="content">
+							教练 注册为杏运树手机用户
+						</view>
+					</i-step>
+					<i-step>
+						<view slot="title">
+							待处理
+						</view>
+						<view slot="content">
+							前台 在管理后台录入教练信息
+						</view>
+					</i-step>
+					<i-step>
+						<view slot="title">
+							待处理
+						</view>
+						<view slot="content">
+							前台 在管理后台添加或编辑教练信息时，绑定教练注册的手机用户
+						</view>
+					</i-step>
+				</i-steps>
+
+				<view class="weui-msg__opr-area">
+					<view class="weui-btn-area">
+						<button bindtap="changeAuthMode1" class="weui-btn" type="default" form-type="submit">自己填写教练资料-立即认证</button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</form>
+</view>

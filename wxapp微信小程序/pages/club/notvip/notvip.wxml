@@ -1,0 +1,42 @@
+<view class="webkit-center qualification body">
+  <view class="header">
+    <view class="header-webkit">
+      <view class="header-club-webkit">
+        <image class="club-logo" src="{{clubInfo.logo ? clubInfo.logo : '/images/logo.png'}}" />
+        <view class="club-name h2">{{clubInfo.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="article-webkit">
+      <!-- 输入框 -->
+      <view class="form-webkit">
+        <view class="is-Gip" style="border: 0 solid #dedede;">
+          <view class="input-webkit" style="height: auto;text-align:left;padding: 36rpx 120rpx;font-size: 36rpx;">
+            <view style="color:#3a3c45;">{{userInfo.nickname}}</view>
+            <view style="color:#6e6e6e;">{{userInfo.phone}}</view>
+          </view>
+        </view>
+        
+        <view class="xx-foelg" style="margin: 40rpx 62rpx;color:#999999;">
+          <view class="border">
+            <text class="text">您的手机号还未认证为会员</text>
+          </view>
+        </view>
+        
+        <view class="xx-foelg" style="margin: 120rpx 62rpx 80rpx 62rpx;">
+          <view class="border">
+            <text class="text">如已入会，请联系俱乐部的工作人员为您处理。认证后你将可以</text>
+          </view>
+        </view>
+      </view>
+      <!-- END输入框 -->
+      <image class="footer-img" mode="widthFix" src="/images/wxQualification.png" />
+    </view>
+  </view>
+  <view>
+    <view class="footer-webkit">
+
+    </view>
+  </view>
+</view>

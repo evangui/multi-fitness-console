@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"i-alert": "../../../components/iview/alert/index"
+ },
+  
+  "navigationBarTitleText": "预约教练",
+  "enablePullDownRefresh": false
+}
+

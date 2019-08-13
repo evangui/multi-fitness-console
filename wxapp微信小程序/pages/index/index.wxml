@@ -1,0 +1,13 @@
+
+<view class="page">
+	<view class="weui-panel__bd bg-color-white" style="padding:300rpx 100rpx;color:#555555;border-radius: 0;">
+		<view style="font-size: 60rpx;text-align: center;">
+			<image src="/images/logo2.png" style="width:200rpx;height:200rpx;"></image>
+			<view>杏运树</view>
+			<view style="font-size: 36rpx;margin: 50rpx;color:#888888">——为健康而生</view>
+		</view>
+
+
+	</view>
+</view>
+

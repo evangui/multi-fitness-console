@@ -14,8 +14,9 @@ java多商户版健身房saas管理系统
 - swagger api
 
 # 项目目录
-guns-admin   平台方管理后台
-guns-rest        多商户与小程序用户(会员&工作人员)端api
+- wxapp微信小程序:   用户(会员&工作人员)端小程序项目代码
+- guns-admin:   平台方管理后台
+- guns-rest:        多商户与小程序用户(会员&工作人员)端api
     src\main\java\com\stylefeng\guns\modular\mch  商户端管理系统api
     src\main\java\com\stylefeng\guns\modular\usr  小程序用户(会员&工作人员)端api
 

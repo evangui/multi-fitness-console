@@ -1,0 +1,126 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+<view class="page">
+	<view class="weui-panel__bd bg-color-white">
+
+				<view  class="weui-media-box weui-media-box_appmsg">
+					<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+						<image class="weui-media-box__thumb" src="{{vipInfo.avatar || basic.avatar(vipInfo.userId)}}" style="border-radius: 4px;"/>
+					</view>
+					
+					<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+						<view class="weui-media-box__title">
+							{{vipInfo.realname}} 
+							<i-tag wx:if="{{vipInfo.nickname}}" class="i-tags" name="会员" color="green" style="margin-botton:10rpx;">
+								已绑定微信：{{vipInfo.nickname}} </i-tag>
+						</view>
+						<!--<view class="weui-media-box__desc">最近维护：2017年10月10日</view>-->
+						<view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">加入时间：{{vipInfo.insertDate}}</view>
+                <view wx:if="{{vipInfo.cardType}}" class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{vipInfo.cardType}}</view>
+            </view>
+					</view>
+					<view class="weui-cell__ft">
+					</view>
+				</view>
+	</view>
+	
+	 <view class="weui-cells" style="margin-top:15px;">
+     	<view class="weui-cell">
+        <view class="weui-cell__bd">手机</view>
+        <view class="weui-cell__ft">
+        	{{vipInfo.phone}} 
+        <image bingtap="callMember" style="width: 20px;height: 20px;margin-top:-5px;" src="http://m.cattlepie.com/img/detail/dianhua.png"></image>
+        </view>
+      </view>
+      <!--<navigator url="" class="weui-cell" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">个人关注</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>-->
+      <view class="weui-cell">
+          <view class="weui-cell__bd">绑定</view>
+          <view class="weui-cell__ft">
+          	会籍 - 
+          	<block wx:if="{{vipInfo.membershipName}}">{{vipInfo.membershipName}}</block>
+          	<block wx:else>无</block>
+          	，
+          	教练 -
+          	<block wx:if="{{vipInfo.coachName}}">{{vipInfo.coachName}}</block>
+          	<block wx:else>无</block>
+          </view>
+      </view>
+       <view class="weui-cell">
+          <view class="weui-cell__bd">会员卡号</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.cardNumber}}
+          </view>
+      </view>
+      <view class="weui-cell">
+          <view class="weui-cell__bd">时间卡</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.expireTime}}
+          </view>
+      </view>
+      <view class="weui-cell">
+          <view class="weui-cell__bd">私教卡</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.personalTrainerCardCount}}
+          </view>
+      </view>
+      <view wx:if="{{vipInfo.onceCardCounts > 0}}" class="weui-cell">
+          <view class="weui-cell__bd">次卡</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.onceCardCount}}
+          </view>
+      </view>
+      <view wx:if="{{vipInfo.storedValueCardCounts > 0}}"  class="weui-cell">
+          <view class="weui-cell__bd">储值卡</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.storedValueCardCount}}
+          </view>
+      </view>
+      
+      <view  class="weui-cell">
+          <view class="weui-cell__bd">最近签到</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.lastSignTimeStr}}
+          </view>
+      </view>
+     <view class="weui-cell">
+          <view class="weui-cell__bd">介绍人</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.introducePersonName}}
+          </view>
+      </view>
+      <view class="weui-cell">
+          <view class="weui-cell__bd">住址</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.address}}
+          </view>
+      </view>
+      <view  class="weui-cell">
+          <view class="weui-cell__bd">生日</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.birthdayStr}}
+          </view>
+      </view>
+      <!--<view url="" class="weui-cell">
+          <view class="weui-cell__bd">来源</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.sourceId}}
+          </view>
+      </view>-->
+      <view  class="weui-cell">
+          <view class="weui-cell__bd">备注</view>
+          <view class="weui-cell__ft">
+          	{{vipInfo.remark}}
+          </view>
+      </view>
+  </view>
+  
+	 <!--<view class="weui-cells weui-cells_after-title" style="margin-top:15px;">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">课程记录</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">无记录</view>
+      </navigator>
+  </view>-->
+</view>

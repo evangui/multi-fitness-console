@@ -1,0 +1,103 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+<view class="page bg-color-white">
+	<form bindsubmit="formSubmit" report-submit >
+	<view class="weui-panel__bd bg-color-white">
+		<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+			<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+				<image style="border-radius: 5px;" class="weui-media-box__thumb" src="{{coachInfo.avatar || basic.avatar(coachInfo.userId)}}" />
+			</view>
+			<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+				<view class="weui-media-box__title font-gray-title" style="font-size:18px;">
+					{{coachInfo.realname}}
+				</view>
+				<view class="weui-media-box__desc">
+					<block wx-if="{{coachInfo.goodAt}}"> 擅长：{{coachInfo.goodAt}} </block>
+					<block wx-if="{{coachInfo.desc}}"> - {{coachInfo.desc}}</block>
+				</view>
+			</view>
+			<view bindtap="callCoach">
+				<image style="width: 25px;height: 25px;padding: 6px;" src="http://m.cattlepie.com/img/detail/dianhua.png"></image>
+			</view>
+		</navigator>
+		
+	</view>
+
+	<view class="page__bd" style="border-top: solid 1px #e5e5e5;">
+		<i-alert wx:if="{{!hideTip}}" type="info" closable bind:close="handleClick">
+			点击日期下的时间表格，开始预约！
+		</i-alert>
+		
+		<view class="weui-flex bg-color-white">
+			<view class="bg-color-white-smoke" style="width: 25%;border-right: solid 1px #e5e5e5;">
+				<block wx:for="{{dayTable}}" wx:for-item="item" wx:key="id">
+					<block wx:if="{{item.active}}">
+						<div class="bg-color-white dayline">
+								<view class="dayline-tip1 text-color-orange">{{item.date}}</view>
+								<view class="dayline-tip2 text-color-orange">周{{item.weekday}}</view>
+						</div>
+					</block>
+					<block wx:else>
+						<div class="dayline" bindtap="changeDay" data-index="{{index}}">
+							<view class="dayline-tip1 font-gray-content">{{item.date}}</view>
+							<view class="dayline-tip2 font-gray-extra">周{{item.weekday}}</view>
+						</div>
+					</block>
+				</block>
+			</view>
+			
+			<scroll-view scroll-y scroll-top="{{scrolltop}}" 
+					class="weui-flex__item" style="padding: 20px 0 0 6px;width: 80%;height:70vh;">
+				
+				<view  class="weui-flex" style="padding:3px;"></view>
+	
+				<block wx:for="{{timeTable}}" wx:for-item="item" wx:key="id" >
+					<view  class="weui-flex">
+						<view class="timeline-left_item font-gray-extra {{item.hourTime==1 ? '' : 'color-white'}}">
+							{{item.startTimeStr}}
+						</view>
+						
+						<view class="timeline-right_item weui-flex__item {{item.isItemsStarter == 0 ? 'border-no' : item.hourTime==1 ? '' : 'bordertop-halfhour'}}">
+							
+							<block wx-if="{{ item.bespeakId >0 && item.isItemsStarter == 1 }}">
+								<view bindtap="cancelBespeak"  data-item="{{item}}"
+									 class="weui-flex timeline-content timeline-content-item{{item.lengthOfItems}} timeline-content-status{{item.bespeakInfo.status}}">
+									<button class="noborder-btn" form-type="submit">
+									<view>
+										<image src="{{item.bespeakInfo.userId ==memberInfo.id ? memberInfo.avatar : '/images/default_avatar.png'}}" 
+											style="width: 32px;height: 32px;margin:2px 5px 0 0;border-radius: 3px;"/>
+									</view>
+									</button>
+									<view class="weui-flex__item">
+										<view>
+											{{item.bespeakInfo.userId ==memberInfo.id ? item.bespeakInfo.realname : "已被预约"}}
+										</view>
+										<view style="font-size: 12px;line-height: 14px;">
+											{{item.bespeakInfo.fromTimeStr}}-{{item.bespeakInfo.toTimeStr}} 
+											{{basic.getBespeakStatusStr(item.bespeakInfo.status)}}
+										</view>
+									</view>	
+									
+								</view>
+							</block>
+							
+							<block wx-elif="{{item.canBespeak==1}}">
+								<picker bindtap="startBespeak" data-item="{{item}}" data-index="{{index}}" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+									<button class="noborder-btn" form-type="submit">
+									<view wx-if="{{item.canBespeak==1}}" class="timeline-content-bespeak">可预约</view>
+									</button>
+								</picker>
+							</block>
+							
+						</view>
+						
+					</view>
+					
+				</block>
+			 
+			</scroll-view>
+
+		</view>
+
+	</view>
+	</form>
+</view>

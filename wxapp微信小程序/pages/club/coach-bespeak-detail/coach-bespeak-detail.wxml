@@ -1,0 +1,58 @@
+<wxs module="basic" src="../../../filter/basic.wxs"></wxs>
+<view class="page">
+	<form bindsubmit="formSubmit" report-submit >
+	<view class="weui-panel__bd bg-color-white" style="text-align: center;padding:20px 0 15px;">
+		<image src="{{basic.avatar(bespeakInfo.userId)}}" style="width:70px;height: 70px;border-radius: 3px;"/>
+		<view class="font-gray-title" style="margin:10px;"> 
+			{{bespeakInfo.realname}} 
+			<image bingtap="callMember" style="width: 20px;height: 20px;margin-top:-5px;" src="http://m.cattlepie.com/img/detail/dianhua.png"></image>
+		</view>
+		<view class="font-gray-extra"> 
+			<i-tag class="i-tags" name="会员"  color="default" type="border">会员</i-tag>
+			<i-tag class="i-tags" name="私教会员"  color="default" type="border">私教会员</i-tag>
+			<i-tag class="i-tags" name="APP用户"  color="default" type="border">APP用户</i-tag>
+		</view>
+		<!--<view class="weui-flex" style="padding: 0 50px;">
+			<view class="weui-flex__item">
+				<view>
+					<image style="width: 35px;height: 35px;padding: 6px;" src="http://m.cattlepie.com/img/detail/dianhua.png"></image>
+				</view>
+				<view class="font-gray-extra">电话</view>
+			</view>
+		</view>-->
+	</view>
+	
+	 <view class="weui-cells" style="margin-top:15px;">
+     	<view class="weui-cell">
+        <view class="weui-cell__bd">课程进度</view>
+        <view class="weui-cell__ft">{{basic.getBespeakStatusStr(bespeakInfo.status)}}</view>
+      </view>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">时间</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">{{bespeakInfo.date}} {{bespeakInfo.fromTimeStr}}-{{bespeakInfo.toTimeStr}} </view>
+      </navigator>
+  </view>
+  
+	 <!--<view class="weui-cells weui-cells_after-title" style="margin-top:15px;">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">课程记录</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">无记录</view>
+      </navigator>
+  </view>-->
+  
+ 	<view style="padding:15px 10px 0;">本次预约备注</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell">
+				<view class="weui-cell__bd">
+					<textarea disabled="{{2 == bespeakInfo.status ? true : false}}" bindinput="bindInputComment" name="comment" value="{{comment}}" class="weui-textarea"
+						 placeholder="请填写您对预约的备注，如取消预约，可填写取消预约的原因" style="height: 2.6em" />
+					<view class="weui-textarea-counter" style="font-size: 14px;">{{commentLen}}/300</view>
+				</view>
+			</view>
+		</view>
+  
+  <button form-type="submit" wx-if="{{1 == bespeakInfo.status}}" bindtap="acceptBespeak" class="weui-btn bg-color-orange" style="margin: 20px 15px 0;">接受预约</button>
+	<button form-type="submit" bindtap="cancelBespeak" class="weui-btn" type="default" style="margin: 15px;">取消预约</button>
+	
+	</form>
+</view>

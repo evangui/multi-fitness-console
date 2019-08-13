@@ -1,0 +1,4 @@
+.i-alert-success {
+	color:#fff;
+	background:#69b076;
+}

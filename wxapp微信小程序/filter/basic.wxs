@@ -1,0 +1,170 @@
+var basic = {
+//	apiUrl: 'https://evangui.ngrok.wendal.cn/',
+	apiUrl: 'https://xysrest.whbws.cn/',
+	
+	timestamp: function() {
+		return Math.round(getDate().getTime()/1000);
+	},
+	
+	//格式化时间
+	timeFormat: function(value, defaultVal) {
+	  if (parseInt(value) === 0 || !value) {
+	  	return defaultVal || '';
+	  }
+	  
+		// 时间戳转 2017-03-03 12:00 格式
+		var date = getDate(value * 1000);
+		var Y = date.getFullYear();
+		var m = date.getMonth() + 1;
+		var d = date.getDate();
+		var H = date.getHours();
+		var i = date.getMinutes();
+		if(m < 10) {
+			m = '0' + m;
+		}
+		if(d < 10) {
+			d = '0' + d;
+		}
+		if(H < 10) {
+			H = '0' + H;
+		}
+		if(i < 10) {
+			i = '0' + i;
+		}
+		var t = Y + '-' + m + '-' + d + ' ' + H + ':' + i;
+		return t;
+	},
+	//格式化时间
+	dateFormat: function(value, defaultVal) {
+	  if (parseInt(value) === 0 || !value) {
+	  	return defaultVal || '';
+	  }
+	
+		// 时间戳转 2017-03-03 12:00 格式
+		var date = getDate(value * 1000);
+		var Y = date.getFullYear();
+		var m = date.getMonth() + 1;
+		var d = date.getDate();
+		var H = date.getHours();
+		var i = date.getMinutes();
+		if(m < 10) {
+			m = '0' + m;
+		}
+		if(d < 10) {
+			d = '0' + d;
+		}
+		if(H < 10) {
+			H = '0' + H;
+		}
+		if(i < 10) {
+			i = '0' + i;
+		}
+		var t = Y + '-' + m + '-' + d;
+		return t;
+	},
+	//友好时间
+	friendlytime: function(date, defaultVal) {
+		if (parseInt(date) === 0 || !date) {
+	  	return defaultVal || '';
+	  }
+		
+		//获取js 时间戳
+		var time = getDate().getTime();
+		//去掉 js 时间戳后三位，与php 时间戳保持一致
+		time = parseInt((time - date * 1000) / 1000);
+
+		//存储转换值 
+		var s;
+		if(time < 60) { //十分钟内
+			return '刚刚';
+		} else if((time < 60 * 60) && (time >= 60)) {
+			//超过十分钟少于1小时
+			s = Math.floor(time / 60);
+			return s + "分钟前";
+		} else if((time < 60 * 60 * 24) && (time >= 60 * 60)) {
+			//超过1小时少于24小时
+			s = Math.floor(time / 60 / 60);
+			return s + "小时前";
+		} else if((time < 60 * 60 * 24 * 3) && (time >= 60 * 60 * 24)) {
+			//超过1天少于3天内
+			s = Math.floor(time / 60 / 60 / 24);
+			return s + "天前";
+		} else {
+			//超过3天
+			var date = getDate(parseInt(date) * 1000);
+			return(date.getMonth() + 1) + "月" + date.getDate() + "日";
+		}
+	},
+	
+//	当前预约状态，0正常 1未确认 2已确认 3学员已取消 4 教练已取消',
+	getBespeakStatusStr: function(value) {
+		if (!value) {
+			return '';
+		}
+		switch(value.toString()) {
+			case '0':
+				return '未知';
+				break;
+			case '1':
+				return '待教练确认';
+				break;
+			case '2':
+				return '待上课';
+				break;
+				case '3':
+				return '学员已取消';
+				break;
+				case '4':
+				return '教练已取消';
+				break;
+				case '5':
+				return '已结束';
+				break;
+			default:
+				return '';
+		}
+	},
+	//	multiTimeCard 
+	getCardTypeStr: function(value) {
+		switch(value.toString()) {
+			case 'multiTimeCard':
+				return '时间卡';
+				break;
+			case 'personalTrainerCard':
+				return '私教卡';
+				break;
+			case 'onceCard':
+				return '次卡';
+				break;
+				case 'storeCard':
+				return '储值卡';
+				break;
+			default:
+				return 'vip卡';
+		}
+	},
+	
+	//	multiTimeCard 
+	getRingStatusStr: function(value) {
+		switch(value.toString()) {
+			case '0':
+				return '未归还';
+				break;
+			case '1':
+				return '已归还';
+				break;
+			default:
+				return '';
+		}
+	},
+	
+	avatar: function(uid) {
+		return basic.apiUrl + 'general/tool/avatar?id=' + uid;
+	},
+	
+	distanceDay: function(timestamp) {
+	  var nowTimestamp = Math.round(getDate().getTime()/1000);
+		return Math.round((timestamp - nowTimestamp)/86400);
+	},
+}
+module.exports = basic;

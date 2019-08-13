@@ -1,0 +1,2 @@
+<!--pages/scancode/scancode.wxml-->
+<text class="h3" style="margin:200rpx auto;font-size: 40rpx;">请将摄像头对准需要扫描的二维码</text>

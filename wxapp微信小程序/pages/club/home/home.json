@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "杏运树-俱乐部",
+    "enablePullDownRefresh": true,
+    
+    "navigationBarTextStyle":"white",
+  	"navigationBarBackgroundColor": "#4F4B5F",
+  	
+    "usingComponents": {
+    	"i-toast": "../../../components/iview/toast/index",
+    	
+	    "i-spin": "../../../components/iview/spin/index",
+	    "i-icon": "../../../components/iview/icon/index"
+  	}
+}
