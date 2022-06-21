@@ -40,7 +40,7 @@
         <swagger.version>2.2.2</swagger.version>
         <commons-lang3.version>3.6</commons-lang3.version>
         <ehcache.core.version>2.6.11</ehcache.core.version>
-        <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <jwt.version>0.7.0</jwt.version>
         <flowable.version>6.2.0</flowable.version>
         <hutool.version>4.0.0</hutool.version>
