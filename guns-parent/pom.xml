@@ -43,7 +43,7 @@
         <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
         <jwt.version>0.7.0</jwt.version>
         <flowable.version>6.2.0</flowable.version>
-        <hutool.version>4.0.0</hutool.version>
+        <hutool.version>5.8.10</hutool.version>
         <weixin-java-miniapp.version>3.1.0</weixin-java-miniapp.version>
     </properties>
 
